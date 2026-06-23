@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "last_updated": "2026-06-09",
+    "phase": "Phase 1",
+    "positioning": "Creative systems company — identity infrastructure, AI systems, business operating systems, digital worlds"
+  },
+  "systems": [
+    {
+      "id": "jd-ai-os",
+      "name": "JD AI Operating System",
+      "status": "LIVE",
+      "description": "Command Vault, command center, multi-agent execution layer, and automation infrastructure — the operating system behind JD Productions.",
+      "proof": "operational infrastructure"
+    },
+    {
+      "id": "access",
+      "name": "ACCESS",
+      "status": "BUILDING",
+      "description": "Identity, ownership, and orientation layer for the AI-powered digital world.",
+      "proof": "documented architecture"
+    },
+    {
+      "id": "jyson",
+      "name": "JYSON",
+      "status": "LIVE",
+      "description": "Intelligence routing layer — intent classification and dispatch policy.",
+      "proof": "verified runtime"
+    },
+    {
+      "id": "founder-os",
+      "name": "Founder OS",
+      "status": "BUILDING",
+      "description": "Blueprint-to-operating-system pipeline for founders and organizations.",
+      "proof": "local pipeline"
+    },
+    {
+      "id": "agent-runtime",
+      "name": "Agent Runtime",
+      "status": "BUILDING",
+      "description": "Handle-bound agent context assembly with action policy enforcement.",
+      "proof": "verified runtime"
+    },
+    {
+      "id": "blueprint-engine",
+      "name": "Blueprint Engine",
+      "status": "LIVE",
+      "description": "YAML blueprint validation and Founder OS materialization.",
+      "proof": "local pipeline"
+    },
+    {
+      "id": "dispatch",
+      "name": "Dispatch Architecture",
+      "status": "BUILDING",
+      "description": "Deterministic intent-to-destination routing across system surfaces.",
+      "proof": "verified runtime"
+    }
+  ],
+  "architecture_proof": [
+    "JD AI Operating System — operational",
+    "ACCESS identity system",
+    "JYSON dispatch layer",
+    "Founder OS generation pipeline",
+    "Agent runtime context",
+    "Blueprint validation",
+    "Documentation-first build process"
+  ],
+  "worlds": [
+    {
+      "id": "lil-dev",
+      "name": "Lil Dev",
+      "status": "BUILDING",
+      "url": "https://lildev.world",
+      "purpose": "Original character IP universe — narrative, music, animation infrastructure.",
+      "connection": "Flagship world-building proof under JD Productions."
+    },
+    {
+      "id": "the-collection",
+      "name": "The Collection",
+      "status": "PLANNED",
+      "purpose": "Curated archive of cinematic work and editorial legacy.",
+      "connection": "Prestige archive layer of the JD Productions ecosystem."
+    },
+    {
+      "id": "linc",
+      "name": "LINC",
+      "status": "BUILDING",
+      "purpose": "Love Is The New Currency — cultural brand and movement infrastructure.",
+      "connection": "Cultural world system under JD Productions."
+    },
+    {
+      "id": "garden-grows",
+      "name": "Where The Garden Grows",
+      "status": "BUILDING",
+      "purpose": "Walking Paintbrush campaign — art, community, and purpose-driven storytelling.",
+      "connection": "Non-profit creative arm connected to The Collection ecosystem."
+    },
+    {
+      "id": "bridge-video",
+      "name": "Bridge Video",
+      "status": "CONCEPT",
+      "purpose": "Video agency model explored as an ecosystem extension.",
+      "connection": "Documented concept — external presence at bridgevideo.co."
+    },
+    {
+      "id": "future-worlds",
+      "name": "Future Worlds",
+      "status": "PLANNED",
+      "purpose": "Additional IP universes and digital ecosystems as systems compound.",
+      "connection": "Expansion layer — registered through blueprint and registry infrastructure."
+    }
+  ],
+  "execution": [
+    "Video production",
+    "Design",
+    "Storytelling",
+    "Software",
+    "AI systems",
+    "Automation",
+    "Brand worlds",
+    "Digital infrastructure",
+    "Digital products"
+  ],
+  "orchestration": {
+    "title": "Systems that coordinate intelligence",
+    "copy": "JD Productions designs infrastructure that connects AI systems, identity, context, and execution. Instead of treating AI as a single chatbot, our systems coordinate multiple intelligence layers through ACCESS, JYSON, Founder OS, Agent Runtime, Blueprint Engine, and Dispatch.",
+    "caption": "AI ↔ AI ↔ Human ↔ System ↔ Execution",
+    "pipeline": [
+      { "id": "user", "label": "User / Account", "status": null },
+      { "id": "access", "label": "ACCESS Identity", "status": "BUILDING" },
+      { "id": "blueprint", "label": "Blueprint Engine", "status": "LIVE" },
+      { "id": "founder-os", "label": "Founder OS", "status": "BUILDING" },
+      { "id": "agent-runtime", "label": "Agent Runtime", "status": "BUILDING" },
+      { "id": "jyson", "label": "JYSON Dispatch", "status": "LIVE" }
+    ],
+    "ai_systems": [
+      { "label": "Claude", "status": "PLANNED", "note": "routing surface defined" },
+      { "label": "GPT", "status": "PLANNED", "note": "not connected" },
+      { "label": "Cursor", "status": "PLANNED", "note": "routing surface defined" },
+      { "label": "Local Tools", "status": "LIVE", "note": "Ollama · local runtime" },
+      { "label": "External APIs", "status": "PLANNED", "note": "dispatch destination only" }
+    ],
+    "execution_surfaces": [
+      { "label": "Websites", "status": "LIVE" },
+      { "label": "Content", "status": "BUILDING" },
+      { "label": "Vaults", "status": "LIVE" },
+      { "label": "Workflows", "status": "LIVE" },
+      { "label": "Apps", "status": "BUILDING" },
+      { "label": "Local Files", "status": "LIVE" }
+    ],
+    "trust_cards": [
+      { "title": "Identity", "body": "ACCESS connects people, accounts, and system ownership." },
+      { "title": "Context", "body": "Blueprints and Founder OS packages preserve the structure of a system." },
+      { "title": "Routing", "body": "JYSON classifies intent and routes work to the right execution surface." },
+      { "title": "Execution", "body": "Agent runtimes prepare work for tools, apps, files, and future APIs." },
+      { "title": "Verification", "body": "Build pipelines and validation scripts prove system behavior before launch." }
+    ]
+  }
+}

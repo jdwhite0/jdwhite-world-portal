@@ -1,0 +1,3254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Work with me - JD White</title>
+  <meta name="description" content="Launch, grow, or scale your project with JD Productions. Find your fit in under 60 seconds.">
+  <link rel="canonical" href="https://jdwhite.world/work-with-me/">
+  <link rel="icon" type="image/png" href="/assets/images/jdp-icon.png?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --emerald:    #169B48;
+      --emerald-dk: #0F7035;
+      --emerald-lt: rgba(22,155,72,0.10);
+      --dark:       #07080F;
+      --dark-2:     #0D1018;
+      --white:      #FFFFFF;
+      --bg-alt:     #F8FAF9;
+      --text:       #0A1A12;
+      --text-sub:   #3A5044;
+      --text-mute:  #6A7D72;
+      --border:     #DDE8E2;
+      --mono:       'Courier New', Courier, monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafbfa;
+      background-image: 
+        radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+        radial-gradient(circle at 50% 0%, rgba(22,155,72,0.02) 0%, transparent 60%);
+      background-size: 24px 24px, 100% 100%;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* ── Top Bar ── */
+    .top-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px clamp(16px, 4vw, 48px);
+      pointer-events: none;
+    }
+    .top-bar > * { pointer-events: auto; }
+
+    .top-logo {
+      height: 22px;
+      width: auto;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .top-logo:hover { opacity: 1; }
+
+    .back-portal {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      color: rgba(22, 155, 72, 0.65);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      animation: portalGlow 2.5s ease-in-out infinite;
+      transition: color 0.3s ease;
+    }
+    .back-portal:hover { color: rgba(22, 155, 72, 1); }
+
+    @keyframes portalGlow {
+      0%, 100% { text-shadow: 0 0 6px rgba(22, 155, 72, 0.20); }
+      50% { text-shadow: 0 0 18px rgba(22, 155, 72, 0.60), 0 0 36px rgba(22, 155, 72, 0.20), 0 0 60px rgba(22, 155, 72, 0.08); }
+    }
+
+    /* ── Legal Overlay ── */
+    .legal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(7, 8, 15, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .legal-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .legal-content {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 720px;
+      padding: clamp(28px, 5vw, 48px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+      position: relative;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    .legal-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .legal-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 6px;
+    }
+    .legal-content p {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+    }
+    .legal-content ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+    .legal-content ul li {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+    }
+    .legal-content .legal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--text-mute);
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      transition: color 0.15s;
+    }
+    .legal-content .legal-close:hover { color: var(--text); }
+    .legal-content .legal-date {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      margin-bottom: 20px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding-top: 60px;
+      background: #030603; /* Deep space-black base with faint green hue */
+      overflow: hidden;
+      position: relative;
+      clip-path: inset(0); /* Contains the position: fixed pseudo-element and canvas */
+    }
+
+    .hero::before {
+      content: '';
+      position: fixed; /* Keep background stable relative to viewport */
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: 
+        radial-gradient(ellipse 75% 65% at 50% 10%, rgba(22, 155, 72, 0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 45% at 80% 80%, rgba(22, 155, 72, 0.12) 0%, transparent 60%),
+        url('../assets/images/bg_galaxy_v2.jpg') center/cover no-repeat;
+      filter: hue-rotate(210deg) brightness(0.38) contrast(1.15); /* Hue-rotate 210deg for vivid green! */
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: clamp(64px, 10vw, 100px) clamp(16px, 4vw, 48px) clamp(56px, 8vw, 80px);
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--emerald);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hero-eyebrow::before {
+      display: none !important;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 22px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--emerald);
+    }
+
+    .hero-sub {
+      font-size: clamp(14px, 1.6vw, 17px);
+      line-height: 1.65;
+      color: rgba(255,255,255,0.48);
+      max-width: 48ch;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding: 13px 24px;
+      cursor: pointer;
+      min-height: 48px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--emerald-dk); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      padding: 12px 20px;
+      cursor: pointer;
+      min-height: 48px;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.30); color: rgba(255,255,255,0.75); }
+
+    /* ── Tier cards ── */
+    .tiers-section {
+      background: var(--white);
+      padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 48px);
+    }
+
+    .tiers-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .tier-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: clamp(20px, 2.5vw, 28px);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.15s, background 0.15s, transform 0.15s;
+    }
+
+    .tier-card:hover {
+      background: var(--bg-alt);
+      transform: translateY(-2px);
+    }
+
+    .tier-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .tier-price {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      float: right;
+    }
+
+    .tier-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2vw, 24px);
+      font-weight: 400;
+      color: var(--text);
+      margin: 10px 0 8px;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .tier-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .tier-for {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .tier-for li {
+      font-size: 12px;
+      color: var(--text-mute);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .tier-for li::before {
+      content: '→';
+      font-size: 10px;
+    }
+
+    /* ── Section wrapper ── */
+    .section-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 24px);
+    }
+
+    /* ── Quiz ── */
+    .quiz-section { background: var(--bg-alt); border-top: 1px solid var(--border); }
+
+    .progress-dots {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .dot {
+      height: 5px;
+      border-radius: 100px;
+      background: var(--border);
+      transition: all 0.25s ease;
+    }
+
+    .dot.active { width: 20px; background: var(--emerald); }
+    .dot.done   { width: 5px;  background: var(--emerald-dk); opacity: 0.6; }
+    .dot.pending { width: 5px; }
+
+    .quiz-card {
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .quiz-card.fade-out {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .q-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 10px;
+    }
+
+    .q-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 9px;
+      padding: 14px 18px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-sub);
+      width: 100%;
+      min-height: 52px;
+      transition: all 0.14s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .quiz-option:hover, .quiz-option:focus {
+      background: var(--bg-alt);
+      border-color: var(--emerald);
+      color: var(--text);
+      outline: none;
+    }
+
+    .quiz-option .arrow {
+      color: var(--emerald);
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.14s;
+      flex-shrink: 0;
+    }
+    .quiz-option:hover .arrow, .quiz-option:focus .arrow { opacity: 1; }
+
+    /* ── Result ── */
+    .result-section { background: var(--white); }
+
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 9px;
+      padding: 10px 18px;
+      margin-bottom: 28px;
+    }
+
+    .result-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+    }
+
+    .result-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .result-price {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-mute);
+      border-left: 1px solid var(--border);
+      padding-left: 10px;
+      margin-left: 2px;
+    }
+
+    .result-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.12;
+    }
+
+    .result-body {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+    }
+
+    .answer-summary {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+    }
+
+    .summary-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 12px;
+    }
+
+    .summary-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 6px;
+    }
+
+    .summary-check { font-size: 11px; margin-top: 1px; flex-shrink: 0; }
+
+    /* ── Capture ── */
+    .capture-section { background: var(--bg-alt); border-top: 1px solid var(--border); }
+
+    .form-field { margin-bottom: 14px; }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-label span { font-weight: 400; color: var(--text-mute); margin-left: 4px; }
+
+    .form-input {
+      width: 100%;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form-input:focus { border-color: var(--emerald); }
+
+    .form-error {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #C0392B;
+      margin-top: 10px;
+    }
+
+    .form-note {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-mute);
+      margin-top: 14px;
+    }
+
+    /* ── Confirmed ── */
+    .confirmed-section { background: var(--white); }
+
+    .confirmed-check {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      padding: 28px clamp(16px, 4vw, 48px);
+    }
+
+    .footer-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(22, 155, 72, 0.65);
+      text-decoration: none;
+      font-weight: 700;
+      animation: portalGlow 2.5s ease-in-out infinite;
+      transition: color 0.3s ease;
+    }
+    .footer-copy:hover { color: rgba(22, 155, 72, 1); }
+
+    /* ── Buttons in white context ── */
+    .btn-primary-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding: 13px 24px;
+      cursor: pointer;
+      min-height: 48px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary-dark:hover { background: var(--emerald-dk); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      color: var(--text-mute);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      padding: 12px 20px;
+      cursor: pointer;
+      min-height: 48px;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--text-mute); color: var(--text-sub); }
+
+    .btn-text {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-mute);
+      font-size: 13px;
+      font-family: var(--mono);
+      padding: 12px 4px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.14s;
+    }
+    .btn-text:hover { color: var(--text-sub); }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Hidden ── */
+    .hidden { display: none !important; }
+
+    /* ── Mobile ── */
+    @media (max-width: 800px) {
+      .tiers-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 580px) {
+      .hero-title { font-size: clamp(34px, 8vw, 52px); }
+    }
+
+    @media (max-width: 580px) {
+      .hero-title { font-size: clamp(34px, 8vw, 52px); }
+    }
+
+    /* ── Marketplace Filters ── */
+    .marketplace-section {
+      padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 48px) 20px;
+      position: relative;
+    }
+
+    .section-title-wrap {
+      max-width: 1040px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: clamp(13px, 1.5vw, 15px);
+      color: var(--text-mute);
+      max-width: 60ch;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .filter-bar-wrap {
+      max-width: 1040px;
+      margin: 0 auto 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-row-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-right: 6px;
+    }
+
+    .filter-pill {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 6px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-sub);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1.4;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--text-mute);
+      color: var(--text);
+    }
+
+    .filter-pill.active {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: var(--white);
+    }
+
+    /* ── Offers Grid ── */
+    .offers-grid-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      min-height: 200px;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 20px;
+    }
+
+    .offer-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+
+    .offer-card:hover {
+      border-color: var(--text-mute);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.02);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+
+    .card-badge {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .badge-buynow {
+      background: var(--emerald-lt);
+      color: var(--emerald);
+      border: 1px solid rgba(22,155,72,0.15);
+    }
+
+    .badge-sub {
+      background: rgba(26,143,160,0.08);
+      color: #1A8FA0;
+      border: 1px solid rgba(26,143,160,0.15);
+    }
+
+    .badge-digital {
+      background: rgba(138,43,226,0.08);
+      color: #8A2BE2;
+      border: 1px solid rgba(138,43,226,0.15);
+    }
+
+    .badge-sub {
+      background: rgba(217,119,6,0.08);
+      color: #D97706;
+      border: 1px solid rgba(217,119,6,0.15);
+    }
+
+    .card-price {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .card-outcome {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      line-height: 1.55;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .card-timeline {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .card-timeline span {
+      font-weight: 600;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: 0.05em;
+    }
+
+    .card-cta {
+      width: 100%;
+    }
+
+    .btn-card-cta {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      color: var(--text-sub);
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding: 11px 16px;
+      cursor: pointer;
+      min-height: 40px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-card-cta:hover {
+      border-color: var(--text-sub);
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+
+    /* Target buy now buttons to highlight them a bit more */
+    .offer-card[data-type="buy-now"] .btn-card-cta,
+    .offer-card[data-type="digital-product"] .btn-card-cta {
+      background: var(--dark-2);
+      color: var(--white);
+      border-color: var(--dark-2);
+    }
+    
+    .offer-card[data-type="buy-now"] .btn-card-cta:hover,
+    .offer-card[data-type="digital-product"] .btn-card-cta:hover {
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+
+    /* ── Custom Project Section ── */
+    .custom-project-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 48px);
+      text-align: center;
+    }
+
+    .custom-project-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── Help Choose Section ── */
+    .help-choose-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 48px);
+    }
+
+    /* ── Stripe Modal ── */
+    .payment-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(7, 8, 15, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      transition: opacity 0.2s ease;
+    }
+
+    .payment-modal-content {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 460px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      position: relative;
+      animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalSlideUp {
+      from { transform: translateY(15px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .payment-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .payment-modal-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .payment-modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--text-mute);
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      transition: color 0.15s;
+    }
+
+    .payment-modal-close:hover {
+      color: var(--text);
+    }
+
+    .payment-modal-body {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .payment-modal-info {
+      background: rgba(22,155,72,0.05);
+      border-left: 3px solid var(--emerald);
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin: 14px 0;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    .payment-link-box {
+      margin-top: 14px;
+    }
+
+    .link-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-mute);
+      margin-bottom: 4px;
+    }
+
+    .payment-modal-body code {
+      display: block;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+      word-break: break-all;
+    }
+
+    .payment-modal-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* ── Star Decor ── */
+    .star-decor {
+      position: absolute;
+      font-size: 8px;
+      color: rgba(22, 155, 72, 0.12);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── Typography Overrides ── */
+    .hero-title {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.02em !important;
+      color: rgba(255, 255, 255, 0.95) !important;
+      line-height: 1.15 !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .hero-title em {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 700 !important;
+      font-style: italic !important;
+      color: var(--emerald) !important;
+    }
+    
+    .section-title, 
+    .custom-project-section h2, 
+    .help-choose-section h2, 
+    .trust-section h2, 
+    .onboarding-content h2 {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.01em;
+    }
+    
+    .card-title, 
+    .rec-card-title, 
+    .trust-card h3, 
+    .tier-headline {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 500 !important;
+      letter-spacing: -0.015em;
+    }
+    
+    .tier-label, 
+    .card-badge, 
+    .card-timeline span, 
+    .summary-label, 
+    .form-label, 
+    .link-label,
+    .progress-counter {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.05em;
+    }
+    
+    .tier-desc, 
+    .tier-for li, 
+    .card-outcome, 
+    .trust-card p, 
+    .onboarding-slide p, 
+    body, 
+    p {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 400;
+    }
+
+    /* ── Onboarding Modal Overlay ── */
+    .onboarding-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(7, 8, 15, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .onboarding-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .onboarding-content {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 580px;
+      padding: clamp(28px, 5vw, 48px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .onboarding-slide {
+      display: flex;
+      flex-direction: column;
+      animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .onboarding-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 9px;
+      padding: 14px 20px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-sub);
+      transition: all 0.15s ease;
+      text-align: left;
+    }
+    .onboarding-option:hover {
+      border-color: var(--emerald);
+      background: var(--bg-alt);
+      color: var(--text);
+    }
+    .onboarding-option.selected {
+      background: var(--emerald-lt);
+      border-color: var(--emerald);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .onboarding-option::after {
+      content: ' →';
+      opacity: 0;
+      transform: translateX(-5px);
+      transition: all 0.15s ease;
+      color: var(--emerald);
+    }
+    .onboarding-option:hover::after, .onboarding-option.selected::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* ── Blueprint Card Styling ── */
+    .blueprint-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .blueprint-card:hover {
+      border-color: var(--text-mute);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+    }
+
+    /* ── Futuristic Hero Hologram Panel ── */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.18) 50%
+      );
+      background-size: 100% 4px;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    .hero-hologram-panel {
+      position: relative;
+      background: rgba(4, 10, 5, 0.48); /* Rich dark translucent green-black background for maximum text readability */
+      border: 1px solid rgba(22, 155, 72, 0.22); /* Slightly brighter border to pop */
+      border-radius: 14px;
+      padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 44px);
+      max-width: 780px;
+      width: 100%;
+      margin: 0 auto;
+      box-shadow: 
+        0 30px 60px rgba(0,0,0,0.45),
+        inset 0 0 35px rgba(22, 155, 72, 0.06);
+      backdrop-filter: blur(14px); /* Slightly increased blur for premium glassmorphism overlay */
+      -webkit-backdrop-filter: blur(14px);
+      animation: hologramFloat 6s ease-in-out infinite;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+    
+    .hero-hologram-panel:hover {
+      border-color: rgba(22, 155, 72, 0.40);
+      box-shadow: 
+        0 35px 70px rgba(22, 155, 72, 0.08),
+        inset 0 0 40px rgba(22, 155, 72, 0.08);
+    }
+    
+    /* Futuristic Reticle Corner Brackets */
+    .panel-bracket {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: var(--emerald);
+      border-style: solid;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .panel-bracket.top-left {
+      top: -2px; left: -2px;
+      border-width: 2.5px 0 0 2.5px;
+      border-top-left-radius: 4px;
+    }
+    .panel-bracket.top-right {
+      top: -2px; right: -2px;
+      border-width: 2.5px 2.5px 0 0;
+      border-top-right-radius: 4px;
+    }
+    .panel-bracket.bottom-left {
+      bottom: -2px; left: -2px;
+      border-width: 0 0 2.5px 2.5px;
+      border-bottom-left-radius: 4px;
+    }
+    .panel-bracket.bottom-right {
+      bottom: -2px; right: -2px;
+      border-width: 0 2.5px 2.5px 0;
+      border-bottom-right-radius: 4px;
+    }
+    
+    .hero-hologram-panel:hover .panel-bracket {
+      border-color: var(--emerald);
+      width: 22px;
+      height: 22px;
+    }
+    
+    @keyframes hologramFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
+  <!-- Vercel Speed Insights -->
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+  <body>
+
+  <div class="top-bar">
+    <a href="/"><img src="/assets/images/jdp-logo-white.png" alt="JD Productions" class="top-logo"></a>
+    <a href="/" class="back-portal">← Back to Portal</a>
+  </div>
+
+  <!-- Onboarding Intake Modal Overlay -->
+  <div id="onboarding-modal" class="onboarding-overlay hidden">
+    <div class="onboarding-content">
+      <!-- Onboarding Close/Skip Button in top right -->
+      <button class="payment-modal-close" style="position: absolute; top: 16px; right: 20px; font-size: 28px; z-index: 10;" onclick="skipOnboarding()">×</button>
+      
+      <!-- Onboarding Slide: Welcome -->
+      <div id="onboarding-slide-welcome" class="onboarding-slide">
+        <h2 class="section-title" style="font-size: 32px; margin-bottom: 12px; text-align: left;">Build What Comes Next.</h2>
+        <p style="font-size: 15px; color: var(--text-sub); line-height: 1.6; margin-bottom: 32px;">Let's recommend the best setup for what you're building.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <button class="btn-primary-dark" style="width: 100%; justify-content: center;" onclick="startOnboardingQuestions()">Find My Solution →</button>
+          <button class="btn-outline" style="width: 100%; justify-content: center;" onclick="skipOnboarding()">Skip &amp; Browse Everything</button>
+        </div>
+      </div>
+
+      <!-- Onboarding Slide: Question 1 -->
+      <div id="onboarding-slide-q1" class="onboarding-slide hidden">
+        <div style="font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 12px;">Question 1 of 3</div>
+        <h2 class="section-title" style="font-size: 26px; margin-bottom: 24px;">What are you building?</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px;">
+          <button class="onboarding-option" onclick="selectOnboardingOption('q1', 'Website')">Website</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q1', 'Brand')">Brand</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q1', 'Content Engine')">Content Engine</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q1', 'AI & Automation')">AI &amp; Automation</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q1', 'Business Operations')">Business Operations</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q1', 'Digital Product')">Digital Product</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q1', 'Not Sure Yet')">Not Sure Yet</button>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+          <button class="btn-text" onclick="prevOnboardingSlide('welcome')">← Back</button>
+          <button class="btn-outline" style="min-height: 40px; padding: 8px 16px;" onclick="skipOnboarding()">Skip &amp; Browse</button>
+        </div>
+      </div>
+
+      <!-- Onboarding Slide: Question 2 -->
+      <div id="onboarding-slide-q2" class="onboarding-slide hidden">
+        <div style="font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 12px;">Question 2 of 3</div>
+        <h2 class="section-title" style="font-size: 26px; margin-bottom: 24px;">What stage are you in?</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px;">
+          <button class="onboarding-option" onclick="selectOnboardingOption('q2', 'Starting')">Starting</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q2', 'Growing')">Growing</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q2', 'Scaling')">Scaling</button>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+          <button class="btn-text" onclick="prevOnboardingSlide('q1')">← Back</button>
+          <button class="btn-outline" style="min-height: 40px; padding: 8px 16px;" onclick="skipOnboarding()">Skip &amp; Browse</button>
+        </div>
+      </div>
+
+      <!-- Onboarding Slide: Question 3 -->
+      <div id="onboarding-slide-q3" class="onboarding-slide hidden">
+        <div style="font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 12px;">Question 3 of 3</div>
+        <h2 class="section-title" style="font-size: 26px; margin-bottom: 24px;">What matters most right now?</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px;">
+          <button class="onboarding-option" onclick="selectOnboardingOption('q3', 'Get Customers')">Get Customers</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q3', 'Generate Attention')">Generate Attention</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q3', 'Save Time')">Save Time</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q3', 'Automate Work')">Automate Work</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q3', 'Build Infrastructure')">Build Infrastructure</button>
+          <button class="onboarding-option" onclick="selectOnboardingOption('q3', 'Launch Faster')">Launch Faster</button>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+          <button class="btn-text" onclick="prevOnboardingSlide('q2')">← Back</button>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-outline" style="min-height: 40px; padding: 8px 16px;" onclick="skipOnboarding()">Skip &amp; Browse</button>
+            <button id="btn-show-blueprint" class="btn-primary-dark" style="min-height: 40px; padding: 8px 20px;" onclick="submitOnboarding()">Show Recommended Solutions</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="view-hero">
+    <!-- Star Decor Elements for Cinematic Atmosphere -->
+    <span class="star-decor" style="top: 15%; left: 8%;">✦</span>
+    <span class="star-decor" style="top: 30%; right: 12%;">✦</span>
+    <span class="star-decor" style="top: 75%; left: 18%;">✦</span>
+    <span class="star-decor" style="top: 60%; right: 22%;">✦</span>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <!-- Faint green circuit-board/galaxy animation canvas -->
+      <canvas id="hero-canvas" style="position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; opacity: 0.35;"></canvas>
+      
+      <div class="hero-inner">
+        <div class="hero-hologram-panel">
+          <!-- Corner brackets for futuristic reticle feeling -->
+          <div class="panel-bracket top-left"></div>
+          <div class="panel-bracket top-right"></div>
+          <div class="panel-bracket bottom-left"></div>
+          <div class="panel-bracket bottom-right"></div>
+          
+          <p class="hero-eyebrow">Welcome to JD Marketplace</p>
+          <h1 class="hero-title">Build What <em>Comes Next.</em></h1>
+          <p class="hero-sub">
+            Acquire the websites, media, and systems required to scale your business.
+          </p>
+          <div class="cta-row" style="margin-top: 24px;">
+            <a href="#marketplace" class="btn-primary">Browse Offers <span>↓</span></a>
+            <button class="btn-ghost" onclick="openOnboarding()">Configure Build</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RECOMMENDED FOR YOU SECTION ── -->
+    <section class="recommended-section hidden" id="recommended-section" style="background: var(--white); padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 48px) 20px; border-bottom: 1px solid var(--border); position: relative;">
+      <span class="star-decor" style="top: 25%; right: 8%;">✦</span>
+      <div class="section-title-wrap" style="margin-bottom: 32px;">
+        <span class="card-badge badge-buynow" style="font-size: 10px; padding: 6px 14px; margin-bottom: 16px; display: inline-block;">Recommended Solution</span>
+        <h2 class="section-title" id="rec-offer-title">Your Recommended Solutions</h2>
+        <p class="section-subtitle" id="rec-offer-why">Based on your goals and stage, we recommend this build.</p>
+      </div>
+
+      <div id="recommended-blueprint-container" style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+        <div id="recommended-blueprint-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px;">
+          <!-- Matched cards generated dynamically -->
+        </div>
+        
+        <!-- Blueprint Summary Block -->
+        <div id="recommended-blueprint-summary" style="background: var(--bg-alt); border: 1.5px solid var(--border); border-radius: 12px; padding: clamp(24px, 4vw, 36px); display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;">
+          <div>
+            <div style="font-family: var(--mono); font-size: 11px; color: var(--text-mute); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em;">Estimated Investment:</div>
+            <div id="recommended-investment-text" style="font-size: 24px; font-weight: 700; color: var(--emerald); font-family: var(--mono);"></div>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn-primary-dark" style="min-height: 44px;" onclick="inquireBlueprint()">Request Custom Proposal →</button>
+            <button class="btn-outline" style="min-height: 44px;" onclick="openOnboarding()">Change Answers</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MARKETPLACE SECTION ── -->
+    <section class="marketplace-section" id="marketplace">
+      <span class="star-decor" style="top: 10%; left: 5%;">✦</span>
+      <div class="section-title-wrap">
+        <h2 class="section-title">Core Service &amp; System Offers</h2>
+        <p class="section-subtitle">Select a verified solution, subscribe to an ongoing plan, or request a custom proposal.</p>
+      </div>
+
+      <div class="filter-bar-wrap">
+        <div class="filter-row">
+          <span class="filter-row-label">Category</span>
+          <button class="filter-pill active" data-cat="all" onclick="setCategory('all')">All</button>
+          <button class="filter-pill" data-cat="websites" onclick="setCategory('websites')">Websites</button>
+          <button class="filter-pill" data-cat="media" onclick="setCategory('media')">Media &amp; Video</button>
+          <button class="filter-pill" data-cat="systems" onclick="setCategory('systems')">Systems</button>
+          <button class="filter-pill" data-cat="digital-products" onclick="setCategory('digital-products')">Digital Products</button>
+          <button class="filter-pill" data-cat="custom" onclick="setCategory('custom')">Custom</button>
+          <button class="filter-pill" data-cat="subscriptions" onclick="setCategory('subscriptions')">Subscriptions</button>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-row-label">Price</span>
+          <button class="filter-pill active" data-price="all" onclick="setPrice('all')">All</button>
+          <button class="filter-pill" data-price="low" onclick="setPrice('low')">Low</button>
+          <button class="filter-pill" data-price="high" onclick="setPrice('high')">High</button>
+        </div>
+
+      </div>
+
+      <div class="offers-grid-wrap">
+        <div class="offers-grid" id="offers-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TRUST SECTION ── -->
+    <section class="trust-section" style="background: var(--white); padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 48px); border-top: 1px solid var(--border); position: relative;">
+      <span class="star-decor" style="top: 8%; right: 6%;">✦</span>
+      <div class="section-title-wrap">
+        <h2 class="section-title">Proven Outcomes</h2>
+        <p class="section-subtitle">Real results from founders, builders, and operators who deployed these systems.</p>
+      </div>
+
+      <div style="max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; margin-bottom: 48px;">
+        <!-- Case Study 1 -->
+        <div class="trust-card" style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--emerald);">Systems &amp; Automation</div>
+          <h3 class="card-title" style="margin: 0; font-size: 20px; font-weight: 500; color: var(--text);">Organize Your Business Operating System</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; line-height: 1.6;">
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Challenge:</strong>
+              <span style="color: var(--text-sub);">Leadership was losing hours managing disconnected documentation, strategy, and CRM.</span>
+            </div>
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Solution:</strong>
+              <span style="color: var(--text-sub);">Deployed a centralized custom Founder OS dashboard for Kingdom Consulting.</span>
+            </div>
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Outcome:</strong>
+              <span style="color: var(--text); font-weight: 500;">+12 hours/week saved for key leadership members.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="trust-card" style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--emerald);">Websites &amp; Branding</div>
+          <h3 class="card-title" style="margin: 0; font-size: 20px; font-weight: 500; color: var(--text);">Launch Your Website in 72 Hours</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; line-height: 1.6;">
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Challenge:</strong>
+              <span style="color: var(--text-sub);">Client needed immediate online presence for their annual launch campaign.</span>
+            </div>
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Solution:</strong>
+              <span style="color: var(--text-sub);">Designed and launched custom event portal and lead capture setup.</span>
+            </div>
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Outcome:</strong>
+              <span style="color: var(--text); font-weight: 500;">4,200 unique visitors within the first week.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="trust-card" style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--emerald);">Automation &amp; AI</div>
+          <h3 class="card-title" style="margin: 0; font-size: 20px; font-weight: 500; color: var(--text);">Deploy Your First AI Workforce</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; line-height: 1.6;">
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Challenge:</strong>
+              <span style="color: var(--text-sub);">Real-estate investment fund was losing leads due to slow qualification times.</span>
+            </div>
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Solution:</strong>
+              <span style="color: var(--text-sub);">Built and integrated customer qualification AI agents with Slack CRM notifications.</span>
+            </div>
+            <div>
+              <strong style="display: block; font-weight: 600; color: var(--text); font-size: 11px; font-family: var(--mono); text-transform: uppercase; margin-bottom: 2px;">Outcome:</strong>
+              <span style="color: var(--text); font-weight: 500;">Lead qualification time cut from hours to under 2 minutes.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial quotes -->
+      <div style="max-width: 720px; margin: 0 auto; border-left: 2px solid var(--emerald); padding-left: 28px; margin-top: 36px; position: relative; text-align: left;">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--text); line-height: 1.5; margin-bottom: 12px;">
+          "Jerry understands business operations at an expert level. The custom systems and automation pipeline he deployed resolved technical bottlenecks our team had been fighting for months."
+        </p>
+        <span style="font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-mute);">— Operations Director, Apex Holdings</span>
+      </div>
+    </section>
+
+    <!-- ── HELP ME CHOOSE SECTION ── -->
+    <section class="help-choose-section" id="help-choose">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Guided Concierge</h2>
+        <p class="section-subtitle">We understand where you are and can recommend the correct solutions.</p>
+      </div>
+
+      <div class="tiers-grid" style="margin-bottom: 40px;">
+        <button class="tier-card" onclick="selectPath('launch')" style="border-top: 3px solid #169B48;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <span class="tier-label" style="color:#169B48;">LAUNCH</span>
+            <span class="tier-price" style="color: var(--text-mute); font-family: var(--mono); font-size: 11px;">Starting at $297</span>
+          </div>
+          <h3 class="tier-headline">Get online fast.</h3>
+          <p style="font-size: 13px; color: var(--text-sub); line-height: 1.5; margin: 8px 0 16px; text-align: left;">
+            Select this if you need an immediate, high-converting launch website or single landing page to start capturing leads today.
+          </p>
+          <div style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; color: var(--text-sub); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Best for:</div>
+          <ul class="tier-for">
+            <li>Small businesses</li>
+            <li>Creators</li>
+            <li>Ministries</li>
+            <li>Startups</li>
+          </ul>
+        </button>
+
+        <button class="tier-card" onclick="selectPath('grow')" style="border-top: 3px solid #1A8FA0;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <span class="tier-label" style="color:#1A8FA0;">GROW</span>
+            <span class="tier-price" style="color: var(--text-mute); font-family: var(--mono); font-size: 11px;">Starting at $997</span>
+          </div>
+          <h3 class="tier-headline">Generate attention.</h3>
+          <p style="font-size: 13px; color: var(--text-sub); line-height: 1.5; margin: 8px 0 16px; text-align: left;">
+            Select this if you need custom content libraries, brand storytelling videos, or marketing systems to multiply your attention.
+          </p>
+          <div style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; color: var(--text-sub); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Best for:</div>
+          <ul class="tier-for">
+            <li>Established businesses</li>
+            <li>Content engines</li>
+            <li>Personal brands</li>
+            <li>Marketing systems</li>
+          </ul>
+        </button>
+
+        <button class="tier-card" onclick="selectPath('scale')" style="border-top: 3px solid #0A2540;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <span class="tier-label" style="color:#0A2540;">SCALE</span>
+            <span class="tier-price" style="color: var(--text-mute); font-family: var(--mono); font-size: 11px;">Starting at $5,000+</span>
+          </div>
+          <h3 class="tier-headline">Build systems that do the work.</h3>
+          <p style="font-size: 13px; color: var(--text-sub); line-height: 1.5; margin: 8px 0 16px; text-align: left;">
+            Select this if you want to deploy AI assistants, automate operational workflows, and integrate custom software to scale your business.
+          </p>
+          <div style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; color: var(--text-sub); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Best for:</div>
+          <ul class="tier-for">
+            <li>AI systems</li>
+            <li>Automation</li>
+            <li>Operations</li>
+            <li>Enterprise workflows</li>
+          </ul>
+        </button>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn-primary-dark" onclick="openOnboarding()">
+          Launch Guided Concierge Onboarding <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ── CUSTOM PROJECT SECTION ── -->
+    <section class="custom-project-section" id="custom-project" style="position: relative;">
+      <span class="star-decor" style="bottom: 12%; left: 7%;">✦</span>
+      <div class="custom-project-inner">
+        <h2 class="section-title">Need something custom?</h2>
+        <p class="section-subtitle" style="margin-bottom: 24px;">
+          For specialized software builds, high-touch integrations, custom workflows, or enterprise content systems.
+        </p>
+        <button class="btn-primary-dark" onclick="handleOfferCTA('custom-build')">
+          Request Custom Proposal →
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── QUIZ ── -->
+  <section class="quiz-section hidden" id="view-quiz">
+    <div class="section-inner">
+      <button class="btn-text" onclick="backFromQuiz()">← Back</button>
+
+      <div class="progress-dots" id="progress-dots"></div>
+
+      <div class="quiz-card" id="quiz-card">
+        <p class="q-eyebrow" id="q-counter">Question 1 of 4</p>
+        <h2 class="q-text" id="q-text"></h2>
+        <div class="quiz-options" id="q-options"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESULT ── -->
+  <section class="result-section hidden" id="view-result">
+    <div class="section-inner">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mute);margin-bottom:20px;">
+        Recommended Path
+      </p>
+
+      <div class="result-badge" id="result-badge">
+        <div class="result-dot" id="result-dot"></div>
+        <span class="result-label" id="result-label"></span>
+        <span class="result-price" id="result-price"></span>
+      </div>
+
+      <h2 class="result-headline" id="result-headline"></h2>
+      <p class="result-body" id="result-body"></p>
+
+      <div class="answer-summary">
+        <p class="summary-label">Based on your answers</p>
+        <div id="result-summary"></div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn-primary-dark" onclick="goCapture()">
+          Continue <span>→</span>
+        </button>
+        <button class="btn-outline" onclick="startQuiz()">
+          Retake quiz
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAPTURE ── -->
+  <section class="capture-section hidden" id="view-capture">
+    <div class="section-inner">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mute);margin-bottom:14px;">
+        Almost there
+      </p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,36px);font-weight:300;letter-spacing:-0.02em;color:var(--text);margin-bottom:8px;">
+        How do we reach you?
+      </h2>
+      <p style="font-size:14px;color:var(--text-sub);margin-bottom:28px;line-height:1.6;" id="capture-sub">
+        We'll follow up within 24 hours with your proposal.
+      </p>
+
+      <div class="form-field">
+        <label class="form-label" for="inp-name">Your name</label>
+        <input class="form-input" type="text" id="inp-name" placeholder="Jerry White" autocomplete="name">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="inp-email">Email address</label>
+        <input class="form-input" type="email" id="inp-email" placeholder="you@company.com" autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="inp-company">Company or project name <span>(optional)</span></label>
+        <input class="form-input" type="text" id="inp-company" placeholder="Optional">
+      </div>
+
+      <p class="form-error hidden" id="form-error"></p>
+
+      <div class="cta-row" style="margin-top:20px;">
+        <button class="btn-primary-dark" id="submit-btn" onclick="handleSubmit()">
+          Send Inquiry →
+        </button>
+        <button class="btn-text" onclick="backFromCapture()">← Back</button>
+      </div>
+
+      <p class="form-note">No spam. No sales pressure. Just a clear conversation.</p>
+    </div>
+  </section>
+
+  <!-- ── CONFIRMED ── -->
+  <section class="confirmed-section hidden" id="view-confirmed">
+    <div class="section-inner">
+      <div class="confirmed-check" id="confirmed-check">✓</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;letter-spacing:-0.02em;color:var(--text);margin-bottom:14px;line-height:1.1;">
+        You're in the system.
+      </h2>
+      <p style="font-size:16px;color:var(--text-sub);line-height:1.7;margin-bottom:8px;">
+        We received your <strong id="confirmed-tier" style="font-weight:600;"></strong> inquiry.
+        Expect a response within 24 hours.
+      </p>
+      <p style="font-size:14px;color:var(--text-mute);line-height:1.6;margin-bottom:32px;">
+        Want to start the conversation right now?
+      </p>
+
+      <div class="cta-row">
+        <a href="mailto:jerry@jdwhite.world?subject=Work%20With%20Me%20Inquiry" class="btn-primary-dark" id="confirmed-cta">
+          Send a Message →
+        </a>
+        <a href="/" class="btn-text" style="color: var(--emerald);">← Back to Portal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stripe Redirect Demo Modal -->
+  <div id="payment-modal" class="payment-modal-overlay hidden" onclick="closePaymentModalOnOuterClick(event)">
+    <div class="payment-modal-content">
+      <div class="payment-modal-header">
+        <h3>Checkout Redirect</h3>
+        <button class="payment-modal-close" onclick="closePaymentModal()">×</button>
+      </div>
+      <div class="payment-modal-body">
+        <p style="margin-bottom: 12px;">You selected: <strong id="payment-modal-offer-name" style="color: var(--emerald);"></strong></p>
+        <p class="payment-modal-info">In a production environment, this action redirects the user directly to the Stripe checkout link.</p>
+        <div class="payment-link-box">
+          <span class="link-label">Target Payment URL:</span>
+          <code id="payment-modal-link"></code>
+        </div>
+      </div>
+      <div class="payment-modal-footer">
+        <button class="btn-primary-dark" onclick="closePaymentModal()">Got It</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Redirect Demo Modal -->
+  <div id="booking-modal" class="payment-modal-overlay hidden" onclick="closeBookingModalOnOuterClick(event)">
+    <div class="payment-modal-content">
+      <div class="payment-modal-header">
+        <h3>Book Strategy Session</h3>
+        <button class="payment-modal-close" onclick="closeBookingModal()">×</button>
+      </div>
+      <div class="payment-modal-body">
+        <p style="margin-bottom: 12px;">You selected: <strong id="booking-modal-offer-name" style="color: var(--emerald);"></strong></p>
+        <p class="payment-modal-info">In a production environment, this action redirects the user directly to Jerry's booking calendar (e.g. Calendly).</p>
+        <div class="payment-link-box">
+          <span class="link-label">Target Booking URL:</span>
+            <code id="booking-modal-link"></code>
+        </div>
+      </div>
+      <div class="payment-modal-footer">
+        <a href="mailto:jerry@jdwhite.world?subject=Strategy%20Session%20Booking" class="btn-primary-dark" style="margin-right: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Send Email Direct</a>
+        <button class="btn-outline" onclick="closeBookingModal()">Got It</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Privacy Policy Overlay ── -->
+  <div id="privacy-overlay" class="legal-overlay hidden">
+    <div class="legal-content">
+      <button class="legal-close" onclick="closeLegal('privacy')">×</button>
+      <h2>Privacy Policy</h2>
+      <p class="legal-date">Effective: June 8, 2026</p>
+
+      <p>JD Productions Inc. ("we," "us," or "our") operates the website at <strong>jdwhite.world</strong> and related services. This Privacy Policy explains how we collect, use, disclose, and protect your information when you visit our site or submit an inquiry through our concierge form.</p>
+
+      <h3>1. Information We Collect</h3>
+      <p><strong>Personal Information.</strong> When you submit a contact or inquiry form, we collect your name, email address, and optionally your company or project name.</p>
+      <p><strong>Usage Data.</strong> We automatically collect certain information when you visit the site, including your IP address, browser type, operating system, referring URLs, and pages viewed. This helps us understand how visitors use the site and improve the experience.</p>
+      <p><strong>Cookies.</strong> We use localStorage (a browser storage mechanism) to remember your onboarding preferences. We do not use third-party tracking cookies for advertising purposes.</p>
+
+      <h3>2. How We Use Your Information</h3>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Respond to your inquiries and proposals</li>
+        <li>Provide the services you request</li>
+        <li>Improve our website and service offerings</li>
+        <li>Communicate with you about your project or inquiry</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+
+      <h3>3. Data Sharing &amp; Third Parties</h3>
+      <p>We do not sell your personal information. We may share your information with trusted third-party service providers who help us operate our website and business, including:</p>
+      <ul>
+        <li><strong>Vercel Inc.</strong> — website hosting and deployment</li>
+        <li><strong>Google LLC</strong> — calendar scheduling and email services</li>
+        <li><strong>Stripe Inc.</strong> — payment processing (when applicable)</li>
+      </ul>
+      <p>These providers are contractually bound to protect your data and may only use it to perform services on our behalf.</p>
+
+      <h3>4. Data Retention</h3>
+      <p>We retain your personal information for as long as necessary to fulfill the purposes described in this policy, or as required by applicable law. You may request deletion of your data at any time by contacting us.</p>
+
+      <h3>5. Your Rights</h3>
+      <p>Depending on your jurisdiction, you may have the right to:</p>
+      <ul>
+        <li>Access the personal information we hold about you</li>
+        <li>Request correction or deletion of your data</li>
+        <li>Object to or restrict processing of your data</li>
+        <li>Withdraw consent at any time (where processing is based on consent)</li>
+      </ul>
+      <p>To exercise these rights, contact us at <a href="mailto:jerry@jdwhite.world" style="color: var(--emerald);">jerry@jdwhite.world</a>.</p>
+
+      <h3>6. Security</h3>
+      <p>We implement reasonable technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
+
+      <h3>7. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically.</p>
+
+      <h3>8. Contact</h3>
+      <p>If you have questions about this Privacy Policy or wish to exercise your rights, contact us at:<br>
+      <a href="mailto:jerry@jdwhite.world" style="color: var(--emerald);">jerry@jdwhite.world</a></p>
+    </div>
+  </div>
+
+  <!-- ── Terms of Service Overlay ── -->
+  <div id="terms-overlay" class="legal-overlay hidden">
+    <div class="legal-content">
+      <button class="legal-close" onclick="closeLegal('terms')">×</button>
+      <h2>Terms of Service</h2>
+      <p class="legal-date">Effective: June 8, 2026</p>
+
+      <p>These Terms of Service ("Terms") govern your access to and use of the JD Productions website at <strong>jdwhite.world</strong> and the services offered through it. By using this site or submitting an inquiry, you agree to these Terms.</p>
+
+      <h3>1. Services</h3>
+      <p>JD Productions Inc. ("we," "us," "our") offers website development, video production, content systems, automation and AI services, digital products, and consulting ("Services"). All Services are provided on a project basis unless otherwise agreed in writing.</p>
+
+      <h3>2. Inquiries &amp; Proposals</h3>
+      <p>Submitting a contact form or inquiry does not create a binding agreement. We will respond with a proposal or estimate, which must be accepted in writing before work begins. We reserve the right to decline any project for any reason.</p>
+
+      <h3>3. Payment Terms</h3>
+      <p><strong>Digital Products.</strong> Digital products (templates, courses, toolkits) are paid in full at the time of purchase via Stripe. Access is granted immediately upon payment confirmation.</p>
+      <p><strong>Services.</strong> Payment terms for custom services are specified in the project proposal. Generally, a deposit of 50% is required before work begins, with the remaining balance due upon completion or delivery.</p>
+      <p><strong>Subscriptions.</strong> Subscription services (care plans, memberships) are billed monthly. You may cancel at any time; cancellation takes effect at the end of the current billing period.</p>
+      <p>All prices are in US Dollars. Florida sales tax may apply to certain digital products and services.</p>
+
+      <h3>4. Refund Policy</h3>
+      <p><strong>Digital Products.</strong> Due to the nature of digital goods, all digital product sales are final and non-refundable.</p>
+      <p><strong>Custom Services.</strong> The deposit for custom services is non-refundable once work has commenced. If we are unable to deliver the agreed scope after reasonable effort, we will refund any amounts paid beyond the deposit. Disputes will be resolved in good faith.</p>
+      <p><strong>Subscriptions.</strong> Fees paid for the current billing period are non-refundable upon cancellation.</p>
+
+      <h3>5. Intellectual Property</h3>
+      <p><strong>Deliverables.</strong> Upon full payment, you receive full ownership of the custom deliverables created for your project (websites, videos, systems). We retain the right to display the work in our portfolio unless otherwise agreed in writing.</p>
+      <p><strong>Digital Products.</strong> Digital products are licensed for personal or internal business use. You may not resell, redistribute, or sublicense the templates, courses, or tools.</p>
+      <p><strong>Our Tools.</strong> Our proprietary systems, frameworks, and processes remain our intellectual property. You receive a license to use them as part of your deliverables but not to extract or reuse them independently.</p>
+
+      <h3>6. Client Responsibilities</h3>
+      <p>You agree to:</p>
+      <ul>
+        <li>Provide accurate and timely information needed to complete the project</li>
+        <li>Respond to requests for feedback or approval within a reasonable timeframe</li>
+        <li>Not use our services for illegal or unauthorized purposes</li>
+        <li>Maintain the confidentiality of any proprietary information shared during the project</li>
+      </ul>
+
+      <h3>7. Limitation of Liability</h3>
+      <p>To the fullest extent permitted by law, JD Productions Inc. shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our site or services. Our total liability for any claim shall not exceed the amount you paid us for the specific service giving rise to the claim.</p>
+
+      <h3>8. Disclaimer of Warranties</h3>
+      <p>Our services and digital products are provided "as is" without warranty of any kind, either express or implied. We do not guarantee that our services will meet your specific business objectives or that the site will be uninterrupted or error-free.</p>
+
+      <h3>9. Governing Law</h3>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the <strong>State of Florida</strong>, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved in the courts of Hillsborough County, Florida.</p>
+
+      <h3>10. Changes to Terms</h3>
+      <p>We reserve the right to modify these Terms at any time. Changes are effective when posted. Continued use of the site after changes constitutes acceptance of the new Terms.</p>
+
+      <h3>11. Contact</h3>
+      <p>For questions about these Terms, contact:<br>
+      <a href="mailto:jerry@jdwhite.world" style="color: var(--emerald);">jerry@jdwhite.world</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#" onclick="openLegal('privacy'); return false;" class="footer-copy" style="cursor: pointer;">Privacy Policy</a>
+        <span style="color: rgba(255,255,255,0.15); font-size: 10px;">|</span>
+        <a href="#" onclick="openLegal('terms'); return false;" class="footer-copy" style="cursor: pointer;">Terms of Service</a>
+      </div>
+      <p class="footer-copy">© 2026 JD Productions Inc.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Data ─────────────────────────────────────────────────────────────────
+
+    const TIERS = {
+      launch: {
+        label: 'LAUNCH', price: 'Starting at $297',
+        color: '#169B48', colorBg: 'rgba(22,155,72,0.09)',
+        headline: 'Your project needs a strong foundation — fast.',
+        body: "You need to be online and professional without overcomplicating it. Launch gives you everything to establish your presence, move quickly, and start converting.",
+        cta: 'Start Your Project', ctaHref: 'mailto:jerry@jdwhite.world?subject=LAUNCH%20Project%20Inquiry',
+      },
+      grow: {
+        label: 'GROW', price: 'Starting at $997',
+        color: '#1A8FA0', colorBg: 'rgba(26,143,160,0.09)',
+        headline: "Your brand needs infrastructure, not just a website.",
+        body: "You're past the starting line. You need content systems, marketing infrastructure, and brand consistency that works while you sleep. Grow is the play.",
+        cta: 'Schedule a Strategy Session', ctaHref: 'mailto:jerry@jdwhite.world?subject=GROW%20Strategy%20Session',
+      },
+      scale: {
+        label: 'SCALE', price: 'Starting at $5,000+',
+        color: '#0A2540', colorBg: 'rgba(10,37,64,0.06)',
+        headline: 'You need systems that compound over time.',
+        body: "You're building for operations. Automation, AI systems, internal tools — this isn't a template job. It's an infrastructure decision. Scale is how we build that for you.",
+        cta: 'Request a Custom Build', ctaHref: 'mailto:jerry@jdwhite.world?subject=SCALE%20Custom%20Build%20Request',
+      },
+    };
+
+    const MARKETPLACE_OFFERS = [
+      {
+        id: "website-72-hours",
+        category: "websites",
+        name: "Launch Your Website in 72 Hours",
+        outcome: "Get online fast with a clean, mobile-ready website designed for immediate conversion.",
+        price: "$297",
+        timeline: "72 hours",
+        type: "buy-now",
+        badge: "Buy Now",
+        paymentUrl: "https://buy.stripe.com/dRm6oJfpka2cg2Nb2G08g05",
+        intakeRoute: null,
+        tier: "launch"
+      },
+      {
+        id: "business-website",
+        category: "websites",
+        name: "Scale Your Business Website",
+        outcome: "Full corporate website with custom integrations, animations, and lead flows.",
+        price: "Starting at $997",
+        timeline: "1-2 weeks",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: "https://buy.stripe.com/28E5kF90Weis03PeeS08g06",
+        intakeRoute: "grow",
+        tier: "grow"
+      },
+      {
+        id: "landing-page",
+        category: "websites",
+        name: "Start Capturing Leads Online",
+        outcome: "A high-converting single-page landing page optimized for ads and visual appeal.",
+        price: "$197",
+        timeline: "48-72 hours",
+        type: "buy-now",
+        badge: "Buy Now",
+        paymentUrl: "https://buy.stripe.com/14AeVf4KGb6g2bXdaO08g07",
+        intakeRoute: null,
+        tier: "launch"
+      },
+      {
+        id: "website-care-plan",
+        category: "websites",
+        name: "Website Care Plan",
+        outcome: "Monthly updates, security patches, ongoing SEO audits, and direct engineering support.",
+        price: "$99/mo",
+        timeline: "Ongoing",
+        type: "subscription",
+        badge: "Subscription",
+        paymentUrl: "https://buy.stripe.com/fZucN71yub6g8AleeS08g08",
+        intakeRoute: null,
+        tier: "launch"
+      },
+      {
+        id: "capture-brand-story",
+        category: "media",
+        name: "Social Media Video Recap",
+        outcome: "Cinematic recap video for your launch event, conference, Instagram highlight, or celebration.",
+        price: "Starting at $450",
+        timeline: "2 hours",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: "https://buy.stripe.com/6oU14p6SO5LW03P4Ei08g09",
+        intakeRoute: "launch",
+        tier: "launch"
+      },
+      {
+        id: "produce-content-library",
+        category: "media",
+        name: "Creative Brand Video Asset Library",
+        outcome: "A comprehensive database of cinematic b-roll and aesthetic clips for your website and social media.",
+        price: "Starting at $750",
+        timeline: "4 hours",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: "https://buy.stripe.com/aFacN75OK8Y8eYJ8Uy08g0a",
+        intakeRoute: "grow",
+        tier: "grow"
+      },
+      {
+        id: "build-month-content",
+        category: "media",
+        name: "Complete Monthly Content Engine",
+        outcome: "A full day of content production delivering a complete vertical video calendar for the month.",
+        price: "Starting at $1,500",
+        timeline: "8 hours",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "scale",
+        tier: "scale"
+      },
+      {
+        id: "establish-authority",
+        category: "media",
+        name: "Professional Corporate Interview",
+        outcome: "Establish industry authority with a premium, multi-camera corporate interview and Q&A session.",
+        price: "Starting at $1,000",
+        timeline: "Corporate Interview",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "grow",
+        tier: "grow"
+      },
+      {
+        id: "explain-different",
+        category: "media",
+        name: "Cinematic Brand Story Documentary",
+        outcome: "A high-end brand documentary explaining your unique vision, values, and customer outcomes.",
+        price: "Starting at $900",
+        timeline: "Branding Session",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "grow",
+        tier: "grow"
+      },
+      {
+        id: "test-content-engine",
+        category: "media",
+        name: "Short-Form Video Starter",
+        outcome: "A single, highly optimized vertical video or reel to test your style and target platform.",
+        price: "Starting at $350",
+        timeline: "Content Starter",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "launch",
+        tier: "launch"
+      },
+      {
+        id: "batch-produce-content",
+        category: "media",
+        name: "Vertical Video Content Day",
+        outcome: "Batch produce short-form vertical videos (TikTok, Reels, Shorts) in a single session.",
+        price: "Starting at $650",
+        timeline: "Content Day",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "grow",
+        tier: "grow"
+      },
+      {
+        id: "content-engine-membership-media",
+        category: "media",
+        name: "Monthly Video Production Membership",
+        outcome: "Ongoing monthly video production, post-production support, and strategic brand management.",
+        price: "Starting at $1,200/mo",
+        timeline: "Ongoing",
+        type: "subscription",
+        badge: "Subscription",
+        paymentUrl: "https://buy.stripe.com/4gM28tfpka2c8Al1s608g0c",
+        intakeRoute: null,
+        tier: "grow"
+      },
+      {
+        id: "founder-strategy-call",
+        category: "systems",
+        name: "Founder Strategy Call",
+        outcome: "One-on-one founder consultation. Clarify priorities, systems, growth opportunities, and next actions.",
+        price: "$150",
+        timeline: "60 mins",
+        type: "booking",
+        badge: "Booking",
+        paymentUrl: "https://calendar.app.google/GgfiVJC1Cr55fbLm8",
+        intakeRoute: null,
+        tier: "launch"
+      },
+      {
+        id: "founder-intensive",
+        category: "systems",
+        name: "Founder Intensive",
+        outcome: "Deep strategic working session. Business model, positioning, operations, and growth planning.",
+        price: "$750",
+        timeline: "Deep Session",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "grow",
+        tier: "grow"
+      },
+      {
+        id: "business-architecture",
+        category: "systems",
+        name: "Business Systems Strategy Session",
+        outcome: "Complete business infrastructure review. Systems, automation, workflows, communications, and operating model.",
+        price: "$2,500",
+        timeline: "Full Review",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "scale",
+        tier: "scale"
+      },
+      {
+        id: "ai-workforce-deployment",
+        category: "systems",
+        name: "AI Workforce Deployment",
+        outcome: "Build and deploy AI agents, workflows, integrations, and operational automations.",
+        price: "Starting at $1,500",
+        timeline: "1-2 weeks",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "scale",
+        tier: "scale"
+      },
+            {
+        id: "ai-automation-audit",
+        category: "systems",
+        name: "Audit Your Business Automations",
+        outcome: "A detailed operational analysis to identify custom AI workforce and automation opportunities.",
+        price: "$297",
+        timeline: "72 hours",
+        type: "buy-now",
+        badge: "Buy Now",
+        paymentUrl: "https://buy.stripe.com/7sY6oJ4KG3DO4k5eeS08g0d",
+        intakeRoute: null,
+        tier: "launch"
+      },
+{
+        id: "founder-os-setup",
+        category: "systems",
+        name: "Organize Your Business Operating System",
+        outcome: "Comprehensive Notion dashboard and workflow integration for teams.",
+        price: "Starting at $997",
+        timeline: "1 week",
+        type: "intake",
+        badge: "Custom Proposal",
+        paymentUrl: null,
+        intakeRoute: "grow",
+        tier: "grow"
+      },
+      {
+        id: "founder-os-membership",
+        category: "systems",
+        name: "Founder OS Membership",
+        outcome: "Continuous systems updates, template additions, resources, and live tech support.",
+        price: "$49/mo",
+        timeline: "Ongoing",
+        type: "subscription",
+        badge: "Subscription",
+        paymentUrl: "https://buy.stripe.com/eVq4gBcd84HSg2N9YC08g0e",
+        intakeRoute: null,
+        tier: "grow"
+      },
+      {
+        id: "ai-ops-membership",
+        category: "systems",
+        name: "AI Operations Membership",
+        outcome: "Ongoing monitoring of active AI agents, bug tracking, and pipeline optimization.",
+        price: "$299/mo",
+        timeline: "Ongoing",
+        type: "subscription",
+        badge: "Subscription",
+        paymentUrl: "https://buy.stripe.com/cNidRb7WScakdUF4Ei08g0g",
+        intakeRoute: null,
+        tier: "scale"
+      },
+      {
+        id: "video-producer-toolkit",
+        category: "digital-products",
+        name: "My Personal Video Producer Toolkit",
+        outcome: "The Whitebook: Production Edition containing contracts, templates, and LUTs.",
+        price: "$47",
+        timeline: "Instant access",
+        type: "digital-product",
+        badge: "Digital Product",
+        paymentUrl: "https://buy.stripe.com/dRm8wR1yu2zK17T4Ei08g02",
+        intakeRoute: null,
+        tier: "launch"
+      },
+      {
+        id: "custom-build",
+        category: "custom",
+        name: "Custom Software & Systems Build",
+        outcome: "Enterprise-grade software solutions, high-touch custom development, and tailored AI systems.",
+        price: "Starting at $5,000",
+        timeline: "Custom",
+        type: "booking",
+        badge: "Booking",
+        paymentUrl: "https://calendar.app.google/GgfiVJC1Cr55fbLm8",
+        intakeRoute: null,
+        tier: "scale"
+      }
+    ];
+
+    const QUESTIONS = [
+      {
+        id: 'goal', text: 'What are you trying to build?',
+        options: [
+          { value: 'presence',   label: 'A website or online presence',    score: {launch:2} },
+          { value: 'marketing',  label: 'A content or marketing system',    score: {grow:2} },
+          { value: 'automation', label: 'Internal tools and automation',     score: {scale:2} },
+          { value: 'platform',   label: 'An app or custom platform',         score: {scale:1,grow:1} },
+        ],
+      },
+      {
+        id: 'audience', text: 'Who is this for?',
+        options: [
+          { value: 'brand',    label: 'My small business or personal brand',     score: {launch:2} },
+          { value: 'agency',   label: "My clients (I'm a freelancer or agency)", score: {grow:2} },
+          { value: 'org',      label: 'An organization or team',                 score: {scale:2} },
+          { value: 'ministry', label: 'A ministry or nonprofit',                  score: {launch:1} },
+        ],
+      },
+      {
+        id: 'stage', text: 'Where are you right now?',
+        options: [
+          { value: 'starting',    label: 'Just getting started',             score: {launch:2} },
+          { value: 'growing',     label: 'Growing and need more traction',   score: {grow:2} },
+          { value: 'established', label: 'Established and ready to scale',   score: {scale:2} },
+        ],
+      },
+      {
+        id: 'budget', text: "What's your budget range?",
+        options: [
+          { value: 'under500',   label: 'Under $500',        score: {launch:3} },
+          { value: '500to2000',  label: '$500 – $2,000',     score: {grow:3} },
+          { value: '2000to5000', label: '$2,000 – $5,000',   score: {grow:2,scale:1} },
+          { value: '5000plus',   label: '$5,000+',           score: {scale:3} },
+        ],
+      },
+    ];
+
+    // ─── State ────────────────────────────────────────────────────────────────
+
+    let currentQ = 0;
+    let answers = {};
+    let recommendation = null;
+    let selectedOffer = null;
+
+    let guidanceGoal = null;
+    let guidanceStage = null;
+
+    let onboardingAnswers = {
+      q1: '',
+      q2: '',
+      q3: ''
+    };
+
+    // ─── View switching ───────────────────────────────────────────────────────
+
+    const VIEWS = ['hero', 'quiz', 'result', 'capture', 'confirmed'];
+
+    function showView(name) {
+      VIEWS.forEach(v => {
+        const el = document.getElementById('view-' + v);
+        if (el) el.classList.toggle('hidden', v !== name);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ─── Quiz (Fallback for Tier Paths) ───────────────────────────────────────
+
+    function startQuiz() {
+      currentQ = 0;
+      answers = {};
+      recommendation = null;
+      selectedOffer = null;
+      renderQuestion();
+      showView('quiz');
+    }
+
+    function backFromQuiz() {
+      showView('hero');
+    }
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentQ];
+
+      // Dots
+      const dots = document.getElementById('progress-dots');
+      dots.innerHTML = QUESTIONS.map((_, i) => {
+        let cls = 'dot ';
+        if (i === currentQ) cls += 'active';
+        else if (i < currentQ) cls += 'done';
+        else cls += 'pending';
+        return `<div class="${cls}"></div>`;
+      }).join('');
+
+      // Card
+      document.getElementById('q-counter').textContent = `Question ${currentQ + 1} of ${QUESTIONS.length}`;
+      document.getElementById('q-text').textContent = q.text;
+
+      const opts = document.getElementById('q-options');
+      opts.innerHTML = q.options.map(o =>
+        `<button class="quiz-option" onclick="handleAnswer('${o.value}')">
+          ${o.label}
+          <span class="arrow">→</span>
+        </button>`
+      ).join('');
+    }
+
+    function handleAnswer(value) {
+      answers[QUESTIONS[currentQ].id] = value;
+      const card = document.getElementById('quiz-card');
+      card.classList.add('fade-out');
+
+      setTimeout(() => {
+        if (currentQ < QUESTIONS.length - 1) {
+          currentQ++;
+          renderQuestion();
+          card.classList.remove('fade-out');
+        } else {
+          recommendation = computeRecommendation();
+          renderResult();
+          showView('result');
+        }
+      }, 230);
+    }
+
+    function computeRecommendation() {
+      const scores = { launch: 0, grow: 0, scale: 0 };
+      QUESTIONS.forEach(q => {
+        const opt = q.options.find(o => o.value === answers[q.id]);
+        if (opt) {
+          Object.entries(opt.score).forEach(([tier, pts]) => {
+            scores[tier] += pts;
+          });
+        }
+      });
+      return ['scale', 'grow', 'launch'].sort((a, b) => scores[b] - scores[a])[0];
+    }
+
+    // ─── Result (Fallback) ───────────────────────────────────────────────────
+
+    function renderResult() {
+      const t = TIERS[recommendation];
+
+      const badge = document.getElementById('result-badge');
+      badge.style.background = t.colorBg;
+      badge.style.border = `1.5px solid ${t.color}30`;
+
+      document.getElementById('result-dot').style.background = t.color;
+      document.getElementById('result-label').textContent = t.label;
+      document.getElementById('result-label').style.color = t.color;
+      document.getElementById('result-price').textContent = t.price;
+      document.getElementById('result-headline').textContent = t.headline;
+      document.getElementById('result-body').textContent = t.body;
+
+      // Summary
+      const summary = document.getElementById('result-summary');
+      summary.innerHTML = QUESTIONS.map(q => {
+        const opt = q.options.find(o => o.value === answers[q.id]);
+        if (!opt) return '';
+        return `<div class="summary-row">
+          <span class="summary-check" style="color:${t.color}">✓</span>
+          <span>${opt.label}</span>
+        </div>`;
+      }).join('');
+    }
+
+    function goCapture() {
+      const t = TIERS[recommendation] || { color: 'var(--emerald)', label: 'custom' };
+      const subEl = document.getElementById('capture-sub');
+      if (selectedOffer) {
+        subEl.innerHTML = `We'll follow up within 24 hours with a custom proposal for your request: <strong style="color:${t.color};font-weight:600;">${selectedOffer}</strong>.`;
+      } else {
+        subEl.innerHTML = `We'll follow up within 24 hours with your <strong style="color:${t.color};font-weight:600;">${t.label}</strong> proposal.`;
+      }
+      showView('capture');
+    }
+
+    // ─── Capture / Submit ─────────────────────────────────────────────────────
+
+    function backFromCapture() {
+      if (selectedOffer) {
+        showView('hero');
+      } else if (recommendation && Object.keys(answers).length > 0) {
+        showView('result');
+      } else {
+        showView('hero');
+      }
+    }
+
+    function selectPath(tier) {
+      recommendation = tier;
+      answers = {};
+      selectedOffer = null;
+      goCapture();
+    }
+
+    async function handleSubmit() {
+      const name    = document.getElementById('inp-name').value.trim();
+      const email   = document.getElementById('inp-email').value.trim();
+      const company = document.getElementById('inp-company').value.trim();
+      const errEl   = document.getElementById('form-error');
+
+      if (!name || !email) {
+        errEl.textContent = 'Name and email are required.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      errEl.classList.add('hidden');
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      const API_URL = 'https://app-iota-inky-62.vercel.app/api/concierge/lead';
+      try {
+          await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, company: company || undefined, recommendation, answers, selectedOffer: selectedOffer || undefined }),
+          });
+      } catch (e) {
+        // non-blocking — confirmation shows regardless
+      }
+
+      renderConfirmation(name);
+      showView('confirmed');
+    }
+
+    function renderConfirmation(name) {
+      const t = TIERS[recommendation] || { color: 'var(--emerald)', colorBg: 'var(--emerald-lt)', label: 'custom', cta: 'Send a Message', ctaHref: 'mailto:jerry@jdwhite.world' };
+      const check = document.getElementById('confirmed-check');
+      check.style.background = t.colorBg;
+      check.style.border = `1.5px solid ${t.color}40`;
+      check.style.color = t.color;
+
+      if (selectedOffer) {
+        document.getElementById('confirmed-tier').textContent = selectedOffer;
+      } else {
+        document.getElementById('confirmed-tier').textContent = t.label;
+      }
+      document.getElementById('confirmed-tier').style.color = t.color;
+
+      const cta = document.getElementById('confirmed-cta');
+      cta.href = t.ctaHref;
+      cta.textContent = t.cta + ' →';
+      cta.style.background = t.color;
+    }
+
+    // ─── Marketplace Logic ───────────────────────────────────────────────────
+
+    let activeCategory = 'all';
+    let activePrice = 'all';
+
+    function extractPriceValue(priceStr) {
+      const cleaned = priceStr.replace(/[$,]/g, '');
+      const match = cleaned.match(/\d+/);
+      return match ? parseInt(match[0], 10) : 0;
+    }
+
+    function renderOffers() {
+      const grid = document.getElementById('offers-grid');
+      if (!grid) return;
+
+      let offers = MARKETPLACE_OFFERS;
+
+      if (activeCategory === 'subscriptions') {
+        offers = offers.filter(o => o.type === 'subscription');
+      } else if (activeCategory !== 'all') {
+        offers = offers.filter(o => o.category === activeCategory);
+      }
+
+      if (activePrice !== 'all') {
+        offers = offers.filter(o => {
+          const val = extractPriceValue(o.price);
+          if (activePrice === 'low') return val < 500;
+          if (activePrice === 'high') return val >= 500;
+          return true;
+        });
+      }
+
+      grid.innerHTML = offers.map(o => {
+        let badgeClass = '';
+        if (o.type === 'buy-now') badgeClass = 'badge-buynow';
+        else if (o.type === 'intake') badgeClass = 'badge-sub';
+        else if (o.type === 'digital-product') badgeClass = 'badge-digital';
+        else if (o.type === 'subscription') badgeClass = 'badge-sub';
+        else if (o.type === 'booking') badgeClass = 'badge-sub';
+
+        let ctaText = 'Buy Now';
+        if (o.type === 'buy-now') ctaText = 'Buy Now';
+        else if (o.type === 'intake') ctaText = 'Request Proposal';
+        else if (o.type === 'digital-product') ctaText = 'Download / Purchase';
+        else if (o.type === 'subscription') ctaText = 'Subscribe / Start Plan';
+        else if (o.type === 'booking') ctaText = 'Book Session';
+
+        const timelineHtml = o.timeline ? `<div class="card-timeline"><span>Timeline:</span> ${o.timeline}</div>` : '';
+
+        return `
+          <div class="offer-card" data-category="${o.category}" data-type="${o.type}">
+            <div>
+              <div class="card-header">
+                <span class="card-badge ${badgeClass}">${o.badge}</span>
+                <span class="card-price">${o.price}</span>
+              </div>
+              <h3 class="card-title">${o.name}</h3>
+              <p class="card-outcome">${o.outcome}</p>
+            </div>
+            <div>
+              ${timelineHtml}
+              <div class="card-cta">
+                <button class="btn-card-cta" onclick="handleOfferCTA('${o.id}')">${ctaText}</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('[data-cat]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.cat === cat);
+      });
+      renderOffers();
+    }
+
+    function setPrice(price) {
+      activePrice = price;
+      document.querySelectorAll('[data-price]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.price === price);
+      });
+      renderOffers();
+    }
+
+    function handleOfferCTA(offerId) {
+      const offer = MARKETPLACE_OFFERS.find(o => o.id === offerId);
+      if (!offer) return;
+
+      if (offer.type === 'intake') {
+        // Open intake form directly with service preselected
+        selectedOffer = offer.name;
+        recommendation = offer.tier || 'launch';
+        answers = { goal: getGoalFromCategory(offer.category) };
+        goCapture();
+      } else if (offer.type === 'booking') {
+        // If booking URL is real, open directly, otherwise open demo modal
+        if (offer.paymentUrl && !offer.paymentUrl.startsWith('#')) {
+          window.open(offer.paymentUrl, '_blank');
+        } else {
+          showBookingModal(offer);
+        }
+      } else {
+        // If payment URL is real, open directly, otherwise open demo modal
+        if (offer.paymentUrl && !offer.paymentUrl.startsWith('#')) {
+          window.open(offer.paymentUrl, '_blank');
+        } else {
+          showPaymentModal(offer);
+        }
+      }
+    }
+
+    function getGoalFromCategory(category) {
+      if (category === 'websites') return 'presence';
+      if (category === 'media') return 'marketing';
+      if (category === 'systems') return 'automation';
+      if (category === 'custom') return 'platform';
+      return 'presence';
+    }
+
+    // ─── Stripe Demo Modal ───────────────────────────────────────────────────
+
+    function showPaymentModal(offer) {
+      const modal = document.getElementById('payment-modal');
+      const title = document.getElementById('payment-modal-offer-name');
+      const link = document.getElementById('payment-modal-link');
+      
+      if (modal && title && link) {
+        title.textContent = offer.name;
+        link.textContent = offer.paymentUrl || '#stripe-link-needed';
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closePaymentModal() {
+      const modal = document.getElementById('payment-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function closePaymentModalOnOuterClick(event) {
+      if (event.target.id === 'payment-modal') {
+        closePaymentModal();
+      }
+    }
+
+    // ─── Booking Demo Modal ───────────────────────────────────────────────────
+
+    function showBookingModal(offer) {
+      const modal = document.getElementById('booking-modal');
+      const title = document.getElementById('booking-modal-offer-name');
+      const link = document.getElementById('booking-modal-link');
+      
+      if (modal && title && link) {
+        title.textContent = offer.name;
+        link.textContent = offer.paymentUrl || '#booking-link-needed';
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function closeBookingModalOnOuterClick(event) {
+      if (event.target.id === 'booking-modal') {
+        closeBookingModal();
+      }
+    }
+
+    // ─── Onboarding Modal Logic ──────────────────────────────────────────────
+
+    function openOnboarding() {
+      const modal = document.getElementById('onboarding-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      
+      onboardingAnswers = { q1: '', q2: '', q3: '' };
+      
+      // Clear selections
+      document.querySelectorAll('.onboarding-option').forEach(el => el.classList.remove('selected'));
+      
+      showOnboardingSlide('welcome');
+    }
+    
+    function skipOnboarding() {
+      const modal = document.getElementById('onboarding-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      localStorage.setItem('jd_onboarding_completed', 'skipped');
+    }
+    
+    function showOnboardingSlide(slideId) {
+      document.querySelectorAll('.onboarding-slide').forEach(el => el.classList.add('hidden'));
+      document.getElementById('onboarding-slide-' + slideId).classList.remove('hidden');
+    }
+    
+    function startOnboardingQuestions() {
+      showOnboardingSlide('q1');
+    }
+    
+    function selectOnboardingOption(questionId, value) {
+      onboardingAnswers[questionId] = value;
+      
+      // Update styling
+      const slide = document.getElementById('onboarding-slide-' + questionId);
+      if (slide) {
+        slide.querySelectorAll('.onboarding-option').forEach(btn => {
+          const btnText = btn.textContent.replace('→', '').trim();
+          btn.classList.toggle('selected', btnText === value);
+        });
+      }
+      
+      // Auto-advance to next slide after a short delay (except q3)
+      setTimeout(() => {
+        if (questionId === 'q1') {
+          showOnboardingSlide('q2');
+        } else if (questionId === 'q2') {
+          showOnboardingSlide('q3');
+        }
+      }, 250);
+    }
+    
+    function prevOnboardingSlide(prevSlideId) {
+      showOnboardingSlide(prevSlideId);
+    }
+    
+    function submitOnboarding() {
+      if (!onboardingAnswers.q1 || !onboardingAnswers.q2 || !onboardingAnswers.q3) {
+        alert("Please answer all questions to generate your blueprint.");
+        return;
+      }
+      
+      const modal = document.getElementById('onboarding-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      
+      localStorage.setItem('jd_onboarding_completed', 'completed');
+      localStorage.setItem('jd_onboarding_answers', JSON.stringify(onboardingAnswers));
+      
+      renderRecommendedBlueprint();
+    }
+
+    // ─── Legal Overlay Toggles ────────────────────────────────────────────────
+
+    function openLegal(name) {
+      const el = document.getElementById(name + '-overlay');
+      if (el) {
+        el.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLegal(name) {
+      const el = document.getElementById(name + '-overlay');
+      if (el) {
+        el.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('legal-overlay') && !e.target.classList.contains('hidden')) {
+        const id = e.target.id;
+        if (id) closeLegal(id.replace('-overlay', ''));
+      }
+    });
+
+    function computeRecommendedBlueprint() {
+      const q1 = onboardingAnswers.q1;
+      const q2 = onboardingAnswers.q2;
+      const q3 = onboardingAnswers.q3;
+
+      let matchedIds = [];
+
+      if (q1 === 'Website') {
+        if (q2 === 'Starting') {
+          matchedIds = ['website-72-hours', 'landing-page', 'website-care-plan'];
+        } else if (q2 === 'Growing') {
+          matchedIds = ['business-website', 'founder-os-membership'];
+        } else {
+          matchedIds = ['business-website', 'website-care-plan', 'ai-ops-membership'];
+        }
+      } else if (q1 === 'Brand') {
+        if (q2 === 'Starting') {
+          matchedIds = ['explain-different', 'founder-strategy-call'];
+        } else {
+          matchedIds = ['explain-different', 'founder-intensive'];
+        }
+      } else if (q1 === 'Content Engine') {
+        if (q2 === 'Starting') {
+          matchedIds = ['test-content-engine', 'capture-brand-story'];
+        } else if (q2 === 'Growing') {
+          matchedIds = ['batch-produce-content', 'content-engine-membership-media'];
+        } else {
+          matchedIds = ['build-month-content', 'content-engine-membership-media'];
+        }
+      } else if (q1 === 'AI & Automation' || q1 === 'Business Operations') {
+        if (q2 === 'Starting' || q2 === 'Growing') {
+          matchedIds = ['ai-automation-audit', 'ai-workforce-deployment'];
+        } else {
+          matchedIds = ['business-architecture', 'ai-workforce-deployment', 'ai-ops-membership'];
+        }
+      } else if (q1 === 'Digital Product') {
+        matchedIds = ['video-producer-toolkit', 'founder-strategy-call'];
+      } else {
+        // Not Sure Yet
+        if (q2 === 'Starting') {
+          matchedIds = ['founder-strategy-call', 'website-72-hours'];
+        } else if (q2 === 'Growing') {
+          matchedIds = ['founder-intensive', 'founder-os-setup'];
+        } else {
+          matchedIds = ['business-architecture', 'custom-build'];
+        }
+      }
+
+      if ((q3 === 'Automate Work' || q3 === 'Save Time') && !matchedIds.includes('ai-automation-audit') && !matchedIds.includes('ai-workforce-deployment') && matchedIds.length < 3) {
+        matchedIds.push('ai-automation-audit');
+      }
+      
+      matchedIds = [...new Set(matchedIds)].slice(0, 3);
+      return matchedIds.map(id => MARKETPLACE_OFFERS.find(o => o.id === id)).filter(Boolean);
+    }
+
+    function calculateInvestment(matchedOffers) {
+      let flatSum = 0;
+      let monthlySum = 0;
+      let isStartingAt = false;
+
+      matchedOffers.forEach(o => {
+        if (o.price.toLowerCase().includes('starting at') || o.price.toLowerCase().includes('+')) {
+          isStartingAt = true;
+        }
+        const cleanPrice = o.price.replace(/[^\d]/g, '');
+        const amount = parseInt(cleanPrice, 10) || 0;
+
+        if (o.price.toLowerCase().includes('/mo') || o.price.toLowerCase().includes('month')) {
+          monthlySum += amount;
+        } else {
+          flatSum += amount;
+        }
+      });
+
+      let text = isStartingAt ? 'Starting at ' : '';
+      if (flatSum > 0 && monthlySum > 0) {
+        text += `$${flatSum.toLocaleString()} + $${monthlySum.toLocaleString()}/month`;
+      } else if (flatSum > 0) {
+        text += `$${flatSum.toLocaleString()}`;
+      } else if (monthlySum > 0) {
+        text += `$${monthlySum.toLocaleString()}/month`;
+      } else {
+        text += 'Custom Quote';
+      }
+      return text;
+    }
+
+    function renderRecommendedBlueprint() {
+      const matched = computeRecommendedBlueprint();
+      const cardsContainer = document.getElementById('recommended-blueprint-cards');
+      const section = document.getElementById('recommended-section');
+      
+      if (!cardsContainer || !section) return;
+      
+      cardsContainer.innerHTML = matched.map(o => {
+        let badgeClass = '';
+        if (o.type === 'buy-now') badgeClass = 'badge-buynow';
+        else if (o.type === 'intake') badgeClass = 'badge-sub';
+        else if (o.type === 'digital-product') badgeClass = 'badge-digital';
+        else if (o.type === 'subscription') badgeClass = 'badge-sub';
+        else if (o.type === 'booking') badgeClass = 'badge-sub';
+
+        let ctaText = 'Buy Now';
+        if (o.type === 'buy-now') ctaText = 'Buy Now';
+        else if (o.type === 'intake') ctaText = 'Request Proposal';
+        else if (o.type === 'digital-product') ctaText = 'Download / Purchase';
+        else if (o.type === 'subscription') ctaText = 'Subscribe / Start Plan';
+        else if (o.type === 'booking') ctaText = 'Book Session';
+
+        const timelineHtml = o.timeline ? `<div class="card-timeline" style="margin-bottom: 0;"><span>Timeline:</span> ${o.timeline}</div>` : '';
+        
+        return `
+          <div class="blueprint-card">
+            <div>
+              <div class="card-header" style="margin-bottom: 12px;">
+                <span class="card-badge ${badgeClass}" style="font-size: 8px;">${o.badge}</span>
+                <span class="card-price" style="font-family: var(--mono); font-size: 11px;">${o.price}</span>
+              </div>
+              <h3 class="card-title" style="font-size: 18px; margin-bottom: 6px; color: var(--text);">${o.name}</h3>
+              <p class="card-outcome" style="font-size: 13px; line-height: 1.5; color: var(--text-sub); margin-bottom: 16px;">${o.outcome}</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: auto;">
+              ${timelineHtml}
+              <button class="btn-card-cta" style="width: 100%; min-height: 36px; font-size: 12px;" onclick="handleOfferCTA('${o.id}')">${ctaText}</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      const investmentText = calculateInvestment(matched);
+      document.getElementById('recommended-investment-text').textContent = investmentText;
+      
+      section.classList.remove('hidden');
+      
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+
+    function inquireBlueprint() {
+      const matched = computeRecommendedBlueprint();
+      if (matched.length === 0) return;
+      
+      selectedOffer = "Recommended Blueprint: " + matched.map(o => o.name).join(", ");
+      recommendation = matched[0].tier || 'grow';
+      answers = onboardingAnswers;
+      goCapture();
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderOffers();
+      
+      const onboardingStatus = localStorage.getItem('jd_onboarding_completed');
+      if (!onboardingStatus) {
+        setTimeout(() => {
+          openOnboarding();
+        }, 800);
+      } else if (onboardingStatus === 'completed') {
+        try {
+          const savedAnswers = localStorage.getItem('jd_onboarding_answers');
+          if (savedAnswers) {
+            onboardingAnswers = JSON.parse(savedAnswers);
+            renderRecommendedBlueprint();
+          }
+        } catch (e) {
+          console.error("Failed to parse saved onboarding answers", e);
+        }
+      }
+
+      // Initialize faint green circuit-board/galaxy constellation animation
+      const canvas = document.getElementById('hero-canvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+        
+        window.addEventListener('resize', () => {
+          if (!canvas) return;
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        });
+
+        const particles = [];
+        const particleCount = 85;
+        
+        // Generate a double spiral arm galaxy distribution
+        for (let i = 0; i < particleCount; i++) {
+          const arm = Math.random() < 0.5 ? 0 : 1;
+          const distance = Math.pow(Math.random(), 1.6) * (Math.min(width, height) * 0.48) + 10;
+          const spiralFactor = 0.012; // Winding tightness
+          const angleStart = (arm * Math.PI) + (distance * spiralFactor);
+          const spread = (Math.random() - 0.5) * 0.45;
+          
+          particles.push({
+            distance: distance,
+            angle: angleStart + spread,
+            orbitSpeed: (0.003 + Math.random() * 0.005) * (1 - (distance / (Math.min(width, height) * 0.5)) * 0.55),
+            size: Math.random() * 2 + 0.8,
+            pulseSpeed: Math.random() * 0.02 + 0.006,
+            alpha: Math.random() * 0.65 + 0.15,
+            phase: Math.random() * Math.PI
+          });
+        }
+
+        // Electricity Pulses System (alive with moving currents)
+        const electricityPulses = [];
+        const maxPulses = 25;
+
+        function getNeighbors(idx, currentX, currentY, centerX, centerY) {
+          const neighbors = [];
+          for (let j = 0; j < particles.length; j++) {
+            if (idx === j) continue;
+            const p2 = particles[j];
+            const x2 = centerX + Math.cos(p2.angle) * p2.distance;
+            const y2 = centerY + Math.sin(p2.angle) * p2.distance;
+            
+            const dx = x2 - currentX;
+            const dy = y2 - currentY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            if (dist < 130) {
+              neighbors.push({ index: j, dist: dist });
+            }
+          }
+          return neighbors;
+        }
+
+        function draw() {
+          if (!canvas) return;
+          const centerX = width / 2;
+          const centerY = height / 2;
+          ctx.clearRect(0, 0, width, height);
+          
+          // 1. Draw galactic core & ambient nebula gradient (Darkened center behind card)
+          const coreGrad = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.min(width, height) * 0.45);
+          coreGrad.addColorStop(0, 'rgba(3, 6, 3, 0.92)'); // Dark central mask (darkened for readability)
+          coreGrad.addColorStop(0.2, 'rgba(4, 12, 6, 0.65)'); // Fades out
+          coreGrad.addColorStop(0.42, 'rgba(22, 155, 72, 0.06)'); // Outer glowing spiral
+          coreGrad.addColorStop(0.7, 'rgba(10, 85, 45, 0.02)');
+          coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          ctx.fillStyle = coreGrad;
+          ctx.fillRect(0, 0, width, height);
+          
+          // 2. Update and draw particles in orbital motion
+          particles.forEach((p, idx) => {
+            p.angle += p.orbitSpeed;
+            p.phase += p.pulseSpeed;
+            
+            const x = centerX + Math.cos(p.angle) * p.distance;
+            const y = centerY + Math.sin(p.angle) * p.distance;
+            
+            const currentAlpha = p.alpha * (0.55 + 0.45 * Math.sin(p.phase));
+            
+            ctx.beginPath();
+            ctx.arc(x, y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(22, 155, 72, ${currentAlpha})`;
+            ctx.fill();
+            
+            // Draw secondary glowing halo for core particles
+            if (p.distance < 100) {
+              ctx.beginPath();
+              ctx.arc(x, y, p.size * 2, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(22, 155, 72, ${currentAlpha * 0.2})`;
+              ctx.fill();
+            }
+            
+            // Connect nodes with 45-degree circuit trace paths
+            for (let j = idx + 1; j < particles.length; j++) {
+              const p2 = particles[j];
+              const x2 = centerX + Math.cos(p2.angle) * p2.distance;
+              const y2 = centerY + Math.sin(p2.angle) * p2.distance;
+              
+              const dx = x2 - x;
+              const dy = y2 - y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              
+              if (dist < 130) {
+                const lineAlpha = (1 - dist / 130) * 0.28 * Math.min(currentAlpha, p2.alpha);
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                
+                // Draw 45-degree diagonal path lines (circuit styling)
+                if (Math.abs(dx) > Math.abs(dy)) {
+                  ctx.lineTo(x + dx - dy, y);
+                } else {
+                  ctx.lineTo(x, y + dy - dx);
+                }
+                ctx.lineTo(x2, y2);
+                
+                ctx.strokeStyle = `rgba(22, 155, 72, ${lineAlpha})`;
+                ctx.lineWidth = 0.6;
+                ctx.stroke();
+              }
+            }
+          });
+
+          // 3. Spawn electricity pulses randomly (Green current flow)
+          if (electricityPulses.length < maxPulses && Math.random() < 0.35) {
+            const startIdx = Math.floor(Math.random() * particles.length);
+            const p = particles[startIdx];
+            const px = centerX + Math.cos(p.angle) * p.distance;
+            const py = centerY + Math.sin(p.angle) * p.distance;
+            const neighbors = getNeighbors(startIdx, px, py, centerX, centerY);
+            
+            if (neighbors.length > 0) {
+              const target = neighbors[Math.floor(Math.random() * neighbors.length)];
+              electricityPulses.push({
+                path: [startIdx, target.index],
+                segmentProgress: 0,
+                speed: 0.025 + Math.random() * 0.035,
+                opacity: Math.random() * 0.7 + 0.3,
+                chainCount: 0,
+                maxChain: Math.floor(Math.random() * 3) + 1 // chains 1-4 nodes
+              });
+            }
+          }
+
+          // 4. Update and draw electricity pulses
+          for (let i = electricityPulses.length - 1; i >= 0; i--) {
+            const pulse = electricityPulses[i];
+            const fromIdx = pulse.path[pulse.path.length - 2];
+            const toIdx = pulse.path[pulse.path.length - 1];
+            
+            const pFrom = particles[fromIdx];
+            const pTo = particles[toIdx];
+            
+            const x1 = centerX + Math.cos(pFrom.angle) * pFrom.distance;
+            const y1 = centerY + Math.sin(pFrom.angle) * pFrom.distance;
+            const x2 = centerX + Math.cos(pTo.angle) * pTo.distance;
+            const y2 = centerY + Math.sin(pTo.angle) * pTo.distance;
+            
+            // Calculate 45-degree corner
+            const dx = x2 - x1;
+            const dy = y2 - y1;
+            let cx, cy;
+            if (Math.abs(dx) > Math.abs(dy)) {
+              cx = x1 + dx - dy;
+              cy = y1;
+            } else {
+              cx = x1;
+              cy = y1 + dy - dx;
+            }
+            
+            pulse.segmentProgress += pulse.speed;
+            
+            let px, py;
+            if (pulse.segmentProgress < 0.5) {
+              const t = pulse.segmentProgress * 2;
+              px = x1 + (cx - x1) * t;
+              py = y1 + (cy - y1) * t;
+            } else {
+              const t = (pulse.segmentProgress - 0.5) * 2;
+              px = cx + (x2 - cx) * t;
+              py = cy + (y2 - cy) * t;
+            }
+            
+            // Draw electricity trace segment path (highly visible glowing green)
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            if (pulse.segmentProgress < 0.5) {
+              ctx.lineTo(px, py);
+            } else {
+              ctx.lineTo(cx, cy);
+              ctx.lineTo(px, py);
+            }
+            ctx.strokeStyle = `rgba(120, 255, 180, ${pulse.opacity * 0.70})`;
+            ctx.lineWidth = 1.4;
+            ctx.stroke();
+            
+            // Draw glowing electricity head (bright green-white spark)
+            ctx.beginPath();
+            ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(220, 255, 230, 1.0)`;
+            ctx.shadowColor = 'rgba(50, 255, 120, 0.95)';
+            ctx.shadowBlur = 8;
+            ctx.fill();
+            ctx.shadowBlur = 0; // reset
+            
+            if (pulse.segmentProgress >= 1) {
+              if (pulse.chainCount < pulse.maxChain) {
+                // Chain to next node
+                const currentIdx = toIdx;
+                const pCurr = particles[currentIdx];
+                const curX = centerX + Math.cos(pCurr.angle) * pCurr.distance;
+                const curY = centerY + Math.sin(pCurr.angle) * pCurr.distance;
+                const neighbors = getNeighbors(currentIdx, curX, curY, centerX, centerY);
+                
+                // Exclude nodes already in path to prevent backtracking
+                const validNeighbors = neighbors.filter(n => !pulse.path.includes(n.index));
+                
+                if (validNeighbors.length > 0) {
+                  const target = validNeighbors[Math.floor(Math.random() * validNeighbors.length)];
+                  pulse.path.push(target.index);
+                  pulse.segmentProgress = 0;
+                  pulse.chainCount++;
+                  pulse.speed = 0.025 + Math.random() * 0.035; // re-randomize speed
+                } else {
+                  electricityPulses.splice(i, 1);
+                }
+              } else {
+                electricityPulses.splice(i, 1);
+              }
+            }
+          }
+          
+          requestAnimationFrame(draw);
+        }
+        
+        requestAnimationFrame(draw);
+      }
+
+      // Initialize 3D Parallax Tilt Effect for Hologram Panel
+      const panel = document.querySelector('.hero-hologram-panel');
+      if (panel) {
+        panel.addEventListener('mousemove', (e) => {
+          const rect = panel.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Max tilt angles: 10 degrees rotateX, rotateY
+          const rotateX = -(y - centerY) / (rect.height / 20);
+          const rotateY = (x - centerX) / (rect.width / 20);
+          
+          panel.style.animationPlayState = 'paused';
+          panel.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
+          panel.style.transition = 'transform 0.08s ease, box-shadow 0.3s ease, border-color 0.3s ease';
+        });
+        
+        panel.addEventListener('mouseleave', () => {
+          panel.style.animationPlayState = 'running';
+          panel.style.transform = '';
+          panel.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

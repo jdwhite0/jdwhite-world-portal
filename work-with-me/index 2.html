@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Work With Us — JD Productions</title>
+  <meta name="description" content="Launch, grow, or scale your project with JD Productions. Find your fit in under 60 seconds.">
+  <link rel="canonical" href="https://jdwhite.world/work-with-me/">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=3">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --emerald:    #169B48;
+      --emerald-dk: #0F7035;
+      --emerald-lt: rgba(22,155,72,0.10);
+      --dark:       #07080F;
+      --dark-2:     #0D1018;
+      --white:      #FFFFFF;
+      --bg-alt:     #F8FAF9;
+      --text:       #0A1A12;
+      --text-sub:   #3A5044;
+      --text-mute:  #6A7D72;
+      --border:     #DDE8E2;
+      --mono:       'Courier New', Courier, monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(16px, 4vw, 48px);
+      background: rgba(7,8,15,0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.90);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-back {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.10em;
+      color: rgba(255,255,255,0.40);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: rgba(255,255,255,0.70); }
+
+    /* ── Hero ── */
+    .hero {
+      padding-top: 60px;
+      background: var(--dark);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(22,155,72,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(22,155,72,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: clamp(64px, 10vw, 100px) clamp(16px, 4vw, 48px) clamp(56px, 8vw, 80px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--emerald);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--emerald);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 22px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--emerald);
+    }
+
+    .hero-sub {
+      font-size: clamp(14px, 1.6vw, 17px);
+      line-height: 1.65;
+      color: rgba(255,255,255,0.48);
+      max-width: 48ch;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding: 13px 24px;
+      cursor: pointer;
+      min-height: 48px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--emerald-dk); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      padding: 12px 20px;
+      cursor: pointer;
+      min-height: 48px;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.30); color: rgba(255,255,255,0.75); }
+
+    /* ── Tier cards ── */
+    .tiers-section {
+      background: var(--white);
+      padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 48px);
+    }
+
+    .tiers-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .tier-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: clamp(20px, 2.5vw, 28px);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.15s, background 0.15s, transform 0.15s;
+    }
+
+    .tier-card:hover {
+      background: var(--bg-alt);
+      transform: translateY(-2px);
+    }
+
+    .tier-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .tier-price {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      float: right;
+    }
+
+    .tier-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2vw, 24px);
+      font-weight: 400;
+      color: var(--text);
+      margin: 10px 0 8px;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .tier-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .tier-for {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .tier-for li {
+      font-size: 12px;
+      color: var(--text-mute);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .tier-for li::before {
+      content: '→';
+      font-size: 10px;
+    }
+
+    /* ── Section wrapper ── */
+    .section-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: clamp(52px, 7vw, 80px) clamp(16px, 4vw, 24px);
+    }
+
+    /* ── Quiz ── */
+    .quiz-section { background: var(--bg-alt); border-top: 1px solid var(--border); }
+
+    .progress-dots {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .dot {
+      height: 5px;
+      border-radius: 100px;
+      background: var(--border);
+      transition: all 0.25s ease;
+    }
+
+    .dot.active { width: 20px; background: var(--emerald); }
+    .dot.done   { width: 5px;  background: var(--emerald-dk); opacity: 0.6; }
+    .dot.pending { width: 5px; }
+
+    .quiz-card {
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .quiz-card.fade-out {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .q-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 10px;
+    }
+
+    .q-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 9px;
+      padding: 14px 18px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-sub);
+      width: 100%;
+      min-height: 52px;
+      transition: all 0.14s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .quiz-option:hover, .quiz-option:focus {
+      background: var(--bg-alt);
+      border-color: var(--emerald);
+      color: var(--text);
+      outline: none;
+    }
+
+    .quiz-option .arrow {
+      color: var(--emerald);
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.14s;
+      flex-shrink: 0;
+    }
+    .quiz-option:hover .arrow, .quiz-option:focus .arrow { opacity: 1; }
+
+    /* ── Result ── */
+    .result-section { background: var(--white); }
+
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 9px;
+      padding: 10px 18px;
+      margin-bottom: 28px;
+    }
+
+    .result-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+    }
+
+    .result-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .result-price {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-mute);
+      border-left: 1px solid var(--border);
+      padding-left: 10px;
+      margin-left: 2px;
+    }
+
+    .result-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.12;
+    }
+
+    .result-body {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+    }
+
+    .answer-summary {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+    }
+
+    .summary-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 12px;
+    }
+
+    .summary-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 6px;
+    }
+
+    .summary-check { font-size: 11px; margin-top: 1px; flex-shrink: 0; }
+
+    /* ── Capture ── */
+    .capture-section { background: var(--bg-alt); border-top: 1px solid var(--border); }
+
+    .form-field { margin-bottom: 14px; }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-label span { font-weight: 400; color: var(--text-mute); margin-left: 4px; }
+
+    .form-input {
+      width: 100%;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form-input:focus { border-color: var(--emerald); }
+
+    .form-error {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #C0392B;
+      margin-top: 10px;
+    }
+
+    .form-note {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-mute);
+      margin-top: 14px;
+    }
+
+    /* ── Confirmed ── */
+    .confirmed-section { background: var(--white); }
+
+    .confirmed-check {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      padding: 28px clamp(16px, 4vw, 48px);
+    }
+
+    .footer-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ── Buttons in white context ── */
+    .btn-primary-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding: 13px 24px;
+      cursor: pointer;
+      min-height: 48px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary-dark:hover { background: var(--emerald-dk); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      color: var(--text-mute);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      padding: 12px 20px;
+      cursor: pointer;
+      min-height: 48px;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--text-mute); color: var(--text-sub); }
+
+    .btn-text {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-mute);
+      font-size: 13px;
+      font-family: var(--mono);
+      padding: 12px 4px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.14s;
+    }
+    .btn-text:hover { color: var(--text-sub); }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Hidden ── */
+    .hidden { display: none !important; }
+
+    /* ── Mobile ── */
+    @media (max-width: 800px) {
+      .tiers-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 580px) {
+      .hero-title { font-size: clamp(34px, 8vw, 52px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">JD Productions</a>
+      <a href="/" class="nav-back">← Back to System</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="view-hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Work With Us</p>
+      <h1 class="hero-title">Build What<br><em>Comes Next.</em></h1>
+      <p class="hero-sub">
+        Three paths. One goal — forward movement. Pick the one that fits,
+        or let us find it for you in under 60 seconds.
+      </p>
+      <div class="cta-row">
+        <button class="btn-primary" onclick="startQuiz()">
+          Find My Fit <span>→</span>
+        </button>
+        <a href="#tiers" class="btn-ghost">See the paths</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIER CARDS ── -->
+  <section class="tiers-section" id="tiers">
+    <div class="tiers-grid">
+
+      <button class="tier-card" onclick="selectPath('launch')" style="border-top: 3px solid #169B48;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="tier-label" style="color:#169B48;">LAUNCH</span>
+          <span class="tier-price">Starting at $297</span>
+        </div>
+        <h3 class="tier-headline">Get online fast.</h3>
+        <p class="tier-desc">A professional foundation — built fast, built right.</p>
+        <ul class="tier-for">
+          <li>Small businesses</li>
+          <li>Creators &amp; personal brands</li>
+          <li>Ministries &amp; nonprofits</li>
+          <li>Startups</li>
+        </ul>
+      </button>
+
+      <button class="tier-card" onclick="selectPath('grow')" style="border-top: 3px solid #1A8FA0;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="tier-label" style="color:#1A8FA0;">GROW</span>
+          <span class="tier-price">Starting at $997</span>
+        </div>
+        <h3 class="tier-headline">Generate attention.</h3>
+        <p class="tier-desc">Systems that attract, convert, and retain.</p>
+        <ul class="tier-for">
+          <li>Established businesses</li>
+          <li>Content &amp; marketing systems</li>
+          <li>Personal brands at scale</li>
+          <li>Marketing infrastructure</li>
+        </ul>
+      </button>
+
+      <button class="tier-card" onclick="selectPath('scale')" style="border-top: 3px solid #0A2540;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="tier-label" style="color:#0A2540;">SCALE</span>
+          <span class="tier-price">Starting at $5,000+</span>
+        </div>
+        <h3 class="tier-headline">Build systems that do the work.</h3>
+        <p class="tier-desc">AI infrastructure, automation, and operations at scale.</p>
+        <ul class="tier-for">
+          <li>Founders &amp; operators</li>
+          <li>Organizations &amp; teams</li>
+          <li>AI &amp; automation builds</li>
+          <li>Custom infrastructure</li>
+        </ul>
+      </button>
+
+    </div>
+
+    <p style="text-align:center;margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--text-mute);">
+      Click a path to go directly, or use Find My Fit for a guided recommendation.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── QUIZ ── -->
+  <section class="quiz-section hidden" id="view-quiz">
+    <div class="section-inner">
+      <button class="btn-text" onclick="backFromQuiz()">← Back</button>
+
+      <div class="progress-dots" id="progress-dots"></div>
+
+      <div class="quiz-card" id="quiz-card">
+        <p class="q-eyebrow" id="q-counter">Question 1 of 4</p>
+        <h2 class="q-text" id="q-text"></h2>
+        <div class="quiz-options" id="q-options"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESULT ── -->
+  <section class="result-section hidden" id="view-result">
+    <div class="section-inner">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mute);margin-bottom:20px;">
+        Recommended Path
+      </p>
+
+      <div class="result-badge" id="result-badge">
+        <div class="result-dot" id="result-dot"></div>
+        <span class="result-label" id="result-label"></span>
+        <span class="result-price" id="result-price"></span>
+      </div>
+
+      <h2 class="result-headline" id="result-headline"></h2>
+      <p class="result-body" id="result-body"></p>
+
+      <div class="answer-summary">
+        <p class="summary-label">Based on your answers</p>
+        <div id="result-summary"></div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn-primary-dark" onclick="goCapture()">
+          Continue <span>→</span>
+        </button>
+        <button class="btn-outline" onclick="startQuiz()">
+          Retake quiz
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAPTURE ── -->
+  <section class="capture-section hidden" id="view-capture">
+    <div class="section-inner">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mute);margin-bottom:14px;">
+        Almost there
+      </p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,36px);font-weight:300;letter-spacing:-0.02em;color:var(--text);margin-bottom:8px;">
+        How do we reach you?
+      </h2>
+      <p style="font-size:14px;color:var(--text-sub);margin-bottom:28px;line-height:1.6;" id="capture-sub">
+        We'll follow up within 24 hours with your proposal.
+      </p>
+
+      <div class="form-field">
+        <label class="form-label" for="inp-name">Your name</label>
+        <input class="form-input" type="text" id="inp-name" placeholder="Jerry White" autocomplete="name">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="inp-email">Email address</label>
+        <input class="form-input" type="email" id="inp-email" placeholder="you@company.com" autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="inp-company">Company or project name <span>(optional)</span></label>
+        <input class="form-input" type="text" id="inp-company" placeholder="Optional">
+      </div>
+
+      <p class="form-error hidden" id="form-error"></p>
+
+      <div class="cta-row" style="margin-top:20px;">
+        <button class="btn-primary-dark" id="submit-btn" onclick="handleSubmit()">
+          Send Inquiry →
+        </button>
+        <button class="btn-text" onclick="backFromCapture()">← Back</button>
+      </div>
+
+      <p class="form-note">No spam. No sales pressure. Just a clear conversation.</p>
+    </div>
+  </section>
+
+  <!-- ── CONFIRMED ── -->
+  <section class="confirmed-section hidden" id="view-confirmed">
+    <div class="section-inner">
+      <div class="confirmed-check" id="confirmed-check">✓</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;letter-spacing:-0.02em;color:var(--text);margin-bottom:14px;line-height:1.1;">
+        You're in the system.
+      </h2>
+      <p style="font-size:16px;color:var(--text-sub);line-height:1.7;margin-bottom:8px;">
+        We received your <strong id="confirmed-tier" style="font-weight:600;"></strong> inquiry.
+        Expect a response within 24 hours.
+      </p>
+      <p style="font-size:14px;color:var(--text-mute);line-height:1.6;margin-bottom:32px;">
+        Want to start the conversation right now?
+      </p>
+
+      <div class="cta-row">
+        <a href="mailto:jerry@jdwhite.world?subject=Work%20With%20Me%20Inquiry" class="btn-primary-dark" id="confirmed-cta">
+          Send a Message →
+        </a>
+        <a href="/" class="btn-text">← Back to System</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">JD Productions</a>
+      <p class="footer-copy">© 2026 JD Productions Inc.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Data ─────────────────────────────────────────────────────────────────
+
+    const TIERS = {
+      launch: {
+        label: 'LAUNCH', price: 'Starting at $297',
+        color: '#169B48', colorBg: 'rgba(22,155,72,0.09)',
+        headline: 'Your project needs a strong foundation — fast.',
+        body: "You need to be online and professional without overcomplicating it. Launch gives you everything to establish your presence, move quickly, and start converting.",
+        cta: 'Start Your Project', ctaHref: 'mailto:jerry@jdwhite.world?subject=LAUNCH%20Project%20Inquiry',
+      },
+      grow: {
+        label: 'GROW', price: 'Starting at $997',
+        color: '#1A8FA0', colorBg: 'rgba(26,143,160,0.09)',
+        headline: "Your brand needs infrastructure, not just a website.",
+        body: "You're past the starting line. You need content systems, marketing infrastructure, and brand consistency that works while you sleep. Grow is the play.",
+        cta: 'Schedule a Strategy Session', ctaHref: 'mailto:jerry@jdwhite.world?subject=GROW%20Strategy%20Session',
+      },
+      scale: {
+        label: 'SCALE', price: 'Starting at $5,000+',
+        color: '#0A2540', colorBg: 'rgba(10,37,64,0.06)',
+        headline: 'You need systems that compound over time.',
+        body: "You're building for operations. Automation, AI infrastructure, internal tools — this isn't a template job. It's an architecture decision. Scale is how we build that for you.",
+        cta: 'Request a Custom Build', ctaHref: 'mailto:jerry@jdwhite.world?subject=SCALE%20Custom%20Build%20Request',
+      },
+    };
+
+    const QUESTIONS = [
+      {
+        id: 'goal', text: 'What are you trying to build?',
+        options: [
+          { value: 'presence',   label: 'A website or online presence',    score: {launch:2} },
+          { value: 'marketing',  label: 'A content or marketing system',    score: {grow:2} },
+          { value: 'automation', label: 'Internal tools and automation',     score: {scale:2} },
+          { value: 'platform',   label: 'An app or custom platform',         score: {scale:1,grow:1} },
+        ],
+      },
+      {
+        id: 'audience', text: 'Who is this for?',
+        options: [
+          { value: 'brand',    label: 'My small business or personal brand',     score: {launch:2} },
+          { value: 'agency',   label: "My clients (I'm a freelancer or agency)", score: {grow:2} },
+          { value: 'org',      label: 'An organization or team',                 score: {scale:2} },
+          { value: 'ministry', label: 'A ministry or nonprofit',                  score: {launch:1} },
+        ],
+      },
+      {
+        id: 'stage', text: 'Where are you right now?',
+        options: [
+          { value: 'starting',    label: 'Just getting started',             score: {launch:2} },
+          { value: 'growing',     label: 'Growing and need more traction',   score: {grow:2} },
+          { value: 'established', label: 'Established and ready to scale',   score: {scale:2} },
+        ],
+      },
+      {
+        id: 'budget', text: "What's your budget range?",
+        options: [
+          { value: 'under500',   label: 'Under $500',        score: {launch:3} },
+          { value: '500to2000',  label: '$500 – $2,000',     score: {grow:3} },
+          { value: '2000to5000', label: '$2,000 – $5,000',   score: {grow:2,scale:1} },
+          { value: '5000plus',   label: '$5,000+',           score: {scale:3} },
+        ],
+      },
+    ];
+
+    // ─── State ────────────────────────────────────────────────────────────────
+
+    let currentQ = 0;
+    let answers = {};
+    let recommendation = null;
+
+    // ─── View switching ───────────────────────────────────────────────────────
+
+    const VIEWS = ['hero', 'quiz', 'result', 'capture', 'confirmed'];
+
+    function showView(name) {
+      VIEWS.forEach(v => {
+        const el = document.getElementById('view-' + v);
+        if (el) el.classList.toggle('hidden', v !== name);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ─── Quiz ─────────────────────────────────────────────────────────────────
+
+    function startQuiz() {
+      currentQ = 0;
+      answers = {};
+      recommendation = null;
+      renderQuestion();
+      showView('quiz');
+    }
+
+    function backFromQuiz() {
+      showView('hero');
+    }
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentQ];
+
+      // Dots
+      const dots = document.getElementById('progress-dots');
+      dots.innerHTML = QUESTIONS.map((_, i) => {
+        let cls = 'dot ';
+        if (i === currentQ) cls += 'active';
+        else if (i < currentQ) cls += 'done';
+        else cls += 'pending';
+        return `<div class="${cls}"></div>`;
+      }).join('');
+
+      // Card
+      document.getElementById('q-counter').textContent = `Question ${currentQ + 1} of ${QUESTIONS.length}`;
+      document.getElementById('q-text').textContent = q.text;
+
+      const opts = document.getElementById('q-options');
+      opts.innerHTML = q.options.map(o =>
+        `<button class="quiz-option" onclick="handleAnswer('${o.value}')">
+          ${o.label}
+          <span class="arrow">→</span>
+        </button>`
+      ).join('');
+    }
+
+    function handleAnswer(value) {
+      answers[QUESTIONS[currentQ].id] = value;
+      const card = document.getElementById('quiz-card');
+      card.classList.add('fade-out');
+
+      setTimeout(() => {
+        if (currentQ < QUESTIONS.length - 1) {
+          currentQ++;
+          renderQuestion();
+          card.classList.remove('fade-out');
+        } else {
+          recommendation = computeRecommendation();
+          renderResult();
+          showView('result');
+        }
+      }, 230);
+    }
+
+    function computeRecommendation() {
+      const scores = { launch: 0, grow: 0, scale: 0 };
+      QUESTIONS.forEach(q => {
+        const opt = q.options.find(o => o.value === answers[q.id]);
+        if (opt) {
+          Object.entries(opt.score).forEach(([tier, pts]) => {
+            scores[tier] += pts;
+          });
+        }
+      });
+      return ['scale', 'grow', 'launch'].sort((a, b) => scores[b] - scores[a])[0];
+    }
+
+    // ─── Result ───────────────────────────────────────────────────────────────
+
+    function renderResult() {
+      const t = TIERS[recommendation];
+
+      const badge = document.getElementById('result-badge');
+      badge.style.background = t.colorBg;
+      badge.style.border = `1.5px solid ${t.color}30`;
+
+      document.getElementById('result-dot').style.background = t.color;
+      document.getElementById('result-label').textContent = t.label;
+      document.getElementById('result-label').style.color = t.color;
+      document.getElementById('result-price').textContent = t.price;
+      document.getElementById('result-headline').textContent = t.headline;
+      document.getElementById('result-body').textContent = t.body;
+
+      // Summary
+      const summary = document.getElementById('result-summary');
+      summary.innerHTML = QUESTIONS.map(q => {
+        const opt = q.options.find(o => o.value === answers[q.id]);
+        if (!opt) return '';
+        return `<div class="summary-row">
+          <span class="summary-check" style="color:${t.color}">✓</span>
+          <span>${opt.label}</span>
+        </div>`;
+      }).join('');
+    }
+
+    function goCapture() {
+      const t = TIERS[recommendation];
+      document.getElementById('capture-sub').innerHTML =
+        `We'll follow up within 24 hours with your <strong style="color:${t.color};font-weight:600;">${t.label}</strong> proposal.`;
+      showView('capture');
+    }
+
+    // ─── Capture / Submit ─────────────────────────────────────────────────────
+
+    function backFromCapture() {
+      if (recommendation && Object.keys(answers).length > 0) {
+        showView('result');
+      } else {
+        showView('hero');
+      }
+    }
+
+    function selectPath(tier) {
+      recommendation = tier;
+      answers = {};
+      goCapture();
+    }
+
+    async function handleSubmit() {
+      const name    = document.getElementById('inp-name').value.trim();
+      const email   = document.getElementById('inp-email').value.trim();
+      const company = document.getElementById('inp-company').value.trim();
+      const errEl   = document.getElementById('form-error');
+
+      if (!name || !email) {
+        errEl.textContent = 'Name and email are required.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      errEl.classList.add('hidden');
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      // POST to API (replace URL with your endpoint or Formspree form ID)
+      const API_URL = ''; // e.g. 'https://formspree.io/f/YOUR_FORM_ID'
+      if (API_URL) {
+        try {
+          await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ name, email, company: company || undefined, recommendation, answers }),
+          });
+        } catch (e) {
+          // non-blocking — proceed to confirmation regardless
+        }
+      }
+
+      renderConfirmation(name);
+      showView('confirmed');
+    }
+
+    function renderConfirmation(name) {
+      const t = TIERS[recommendation];
+      const check = document.getElementById('confirmed-check');
+      check.style.background = t.colorBg;
+      check.style.border = `1.5px solid ${t.color}40`;
+      check.style.color = t.color;
+
+      document.getElementById('confirmed-tier').textContent = t.label;
+      document.getElementById('confirmed-tier').style.color = t.color;
+
+      const cta = document.getElementById('confirmed-cta');
+      cta.href = t.ctaHref;
+      cta.textContent = t.cta + ' →';
+      cta.style.background = t.color;
+    }
+  </script>
+</body>
+</html>

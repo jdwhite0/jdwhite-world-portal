@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "last_updated": "2026-06-01",
+    "phase": "Phase 1",
+    "status": "LIVE",
+    "positioning": "Creative systems company — identity infrastructure, AI systems, business operating systems, digital worlds"
+  },
+  "studio": {
+    "name": "JD Productions Inc.",
+    "founded": "2014",
+    "incorporated": "2018",
+    "founded_note": "Started 2014 at Jacksonville State University. Incorporated April 2018 in Tampa, FL.",
+    "location": "Tampa, FL",
+    "tagline": "We build systems, stories, and worlds."
+  },
+  "active_universe": [
+    {
+      "id": "lildev",
+      "title": "Lil Dev",
+      "phase_status": "building",
+      "description": "Original character IP universe — narrative, music, animation infrastructure."
+    },
+    {
+      "id": "linc",
+      "title": "LINC",
+      "phase_status": "building",
+      "description": "Love Is The New Currency — cultural brand and movement infrastructure."
+    },
+    {
+      "id": "collection",
+      "title": "The Collection",
+      "phase_status": "planned",
+      "description": "Curated archive of cinematic work and editorial legacy."
+    }
+  ],
+  "note": "Primary site data lives in system-map.json and work.json. This file retained for backward compatibility."
+}

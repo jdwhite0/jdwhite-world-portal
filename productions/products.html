@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — JD Productions</title>
+  <meta name="description" content="Digital products from JD Productions — AI operating systems, founder capital systems, and production templates. Immediate download." />
+  <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://jdproductions.io/products" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 700px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1100px) {
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .product-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .product-card--featured {
+      border-color: var(--accent);
+    }
+    .product-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .product-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .product-price {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .product-card p {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      flex: 1;
+      margin: 0 0 1.25rem;
+    }
+    .product-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-tertiary, var(--text-secondary));
+      margin-bottom: 1.25rem;
+    }
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: auto;
+      padding: 0.65rem 1.25rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: calc(var(--radius) - 2px);
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .product-cta:hover { opacity: 0.88; }
+    .product-cta--secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+    .product-cta--secondary:hover { background: var(--accent); color: #fff; }
+    .product-divider {
+      margin: 3rem 0 2rem;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+    .product-ladder {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .ladder-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      transition: background 0.15s;
+    }
+    .ladder-item:last-child { border-bottom: none; }
+    .ladder-item:hover { background: var(--surface-hover, var(--surface)); }
+    .ladder-item-left h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+    }
+    .ladder-item-left p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .ladder-item-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+    .ladder-price {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+  </style>
+  <!-- Vercel Speed Insights -->
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="JD Productions — Home">
+      <img src="assets/logos/jdp-logo-dark.png" alt="JD Productions" class="logo-light" width="140" height="22" />
+      <img src="assets/logos/jdp-logo-white.png" alt="" class="logo-dark" width="140" height="22" aria-hidden="true" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#systems-in-motion">Systems</a></li>
+      <li><a href="index.html#worlds">Worlds</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a href="../index.html" class="nav-portal">← Portal</a>
+      <a href="contact.html" class="nav-cta">Start a Build</a>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html#systems-in-motion">Systems</a>
+    <a href="index.html#worlds">Worlds</a>
+    <a href="work.html">Work</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Start a Build</a>
+    <a href="../index.html">← Portal</a>
+  </div>
+
+  <header class="page-hero">
+    <canvas id="page-grid" class="horizon-canvas" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="label">Products</p>
+        <h1>Systems you can own.</h1>
+        <p class="hero-sub">Digital products from JD Productions — AI operating systems, founder capital frameworks, and production toolkits. Built and used internally. Now available.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="ai-systems">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="label">AI &amp; Systems</p>
+        <h2>Build your own operating system.</h2>
+        <p>The same infrastructure JD Productions runs on — packaged as a template and guide.</p>
+      </div>
+      <div class="product-grid">
+        <article class="glass-card product-card product-card--featured reveal">
+          <div class="product-card-top">
+            <h3>JD AI Operating System Template</h3>
+            <span class="product-price">$197</span>
+          </div>
+          <span class="product-tag">AI · Systems · Obsidian</span>
+          <p>Complete Obsidian vault template, 100+ page build guide, agent protocols, and financial engine. Everything you need to build a personal AI operating system — modeled on the infrastructure behind JD Productions.</p>
+          <a href="https://buy.stripe.com/4gMeVf3GC5LWeYJdaO08g01" class="product-cta" target="_blank" rel="noopener noreferrer">Get the Template →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="capital">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="label">Capital Allocation For Founders</p>
+        <h2>Turn income into ownership.</h2>
+        <p>A three-tier system for founders learning to allocate capital — from starter workbook to full high-touch program.</p>
+      </div>
+      <div class="product-ladder reveal">
+        <div class="ladder-item">
+          <div class="ladder-item-left">
+            <h4>Founder Capital System™</h4>
+            <p>6-module course · workbook · 6 allocation templates</p>
+          </div>
+          <div class="ladder-item-right">
+            <span class="ladder-price">$99</span>
+            <a href="https://buy.stripe.com/aFa4gBa50gqAg2N7Qu08g00" class="product-cta product-cta--secondary" target="_blank" rel="noopener noreferrer">Buy →</a>
+          </div>
+        </div>
+        <div class="ladder-item">
+          <div class="ladder-item-left">
+            <h4>The Builder Portfolio</h4>
+            <p>8-module wealth-building system · full course + workbook + templates</p>
+          </div>
+          <div class="ladder-item-right">
+            <span class="ladder-price">$197</span>
+            <a href="https://buy.stripe.com/dRm14p0uq2zK6sdc6K08g03" class="product-cta" target="_blank" rel="noopener noreferrer">Buy →</a>
+          </div>
+        </div>
+        <div class="ladder-item">
+          <div class="ladder-item-left">
+            <h4>Founder Capital Intensive</h4>
+            <p>High-touch program · office hours · portfolio reviews · direct access</p>
+          </div>
+          <div class="ladder-item-right">
+            <span class="ladder-price">$997</span>
+            <a href="https://buy.stripe.com/9B6aEZdhccakbMxdaO08g04" class="product-cta" target="_blank" rel="noopener noreferrer">Apply →</a>
+          </div>
+        </div>
+      </div>
+      <div class="arch-statement reveal" style="margin-top:2rem;">
+        <p>Start at the tier that matches your stage. The system is designed so each product stands alone — but compounds when layered.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="production">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="label">Production</p>
+        <h2>Professional templates for video producers.</h2>
+        <p>The documents every video production needs — built for working professionals.</p>
+      </div>
+      <div class="product-grid">
+        <article class="glass-card product-card reveal">
+          <div class="product-card-top">
+            <h3>The Whitebook™: Production Edition</h3>
+            <span class="product-price">$47</span>
+          </div>
+          <span class="product-tag">Video · Templates · Production</span>
+          <p>9 professional video production templates — contract, talent release form, shoot checklist, shot list, pricing calculator, workflow guide, and more. Built by a working producer. Immediately usable.</p>
+          <a href="https://buy.stripe.com/dRm8wR1yu2zK17T4Ei08g02" class="product-cta" target="_blank" rel="noopener noreferrer">Get the Templates →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="production-services">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="label">Done-for-you</p>
+        <h2>Need execution, not a template?</h2>
+        <p>Client content packages — from starter sessions to monthly production — available through UseQueue.</p>
+      </div>
+      <div class="card-grid card-grid--2 reveal">
+        <div class="glass-card">
+          <h3>UseQueue Service Catalog</h3>
+          <p>Packaged video and content production. Starter sessions at $300 through monthly production tiers. Book directly online.</p>
+          <a href="https://jdproductions.usequeue.com/services" class="work-link" target="_blank" rel="noopener noreferrer">View Services →</a>
+        </div>
+        <div class="glass-card">
+          <h3>Strategic Engagement</h3>
+          <p>Systems work, world architecture, or consulting. Not a packaged service — start with a direct conversation about what you're building.</p>
+          <a href="contact.html" class="work-link">Start a Build →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section section--contrast">
+    <div class="section-inner reveal">
+      <p class="label">Not sure where to start?</p>
+      <h2>Start with the lowest barrier.</h2>
+      <p>The Whitebook at $47 proves the system. The AI OS Template at $197 builds it. The Capital system turns it into ownership.</p>
+      <div class="btn-group">
+        <a href="https://buy.stripe.com/dRm8wR1yu2zK17T4Ei08g02" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Start with The Whitebook — $47</a>
+        <a href="https://buy.stripe.com/4gMeVf3GC5LWeYJdaO08g01" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get the AI OS Template — $197</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section-inner">
+      <div class="footer-row">
+        <p class="footer-meta">JD Productions · Phase 1 · Creative Systems</p>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="https://www.instagram.com/jdproductionsinc/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/jdproductionsinc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    JDP.initHorizonGrid('page-grid', { density: 0.8 });
+    JDP.observeReveals();
+  </script>
+</body>
+</html>

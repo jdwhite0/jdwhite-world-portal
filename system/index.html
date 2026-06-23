@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JYSON — Join the Waitlist</title>
+  <meta name="description" content="JYSON is the intelligence layer — an AI that builds with you, powered by the Zin v1 model. In development now. Try it, and join the official release waitlist." />
+  <link rel="canonical" href="https://jdwhite.world/system" />
+  <link rel="icon" type="image/png" href="/assets/images/jdp-icon.png?v=4" />
+  <meta property="og:title" content="JYSON — Join the Waitlist" />
+  <meta property="og:description" content="The intelligence layer that builds with you. Powered by Zin v1. Try it now, and be first in at the official release." />
+  <meta property="og:url" content="https://jdwhite.world/system" />
+  <meta name="theme-color" content="#0f1113" />
+  <!-- Day/night theme — same auto schedule as the JYSON app (day 5:30a–7p, else night). Layout never changes; only colors swap. -->
+  <script>
+    (function () {
+      var KEY = 'jyson-theme-preference', DAY = 5 * 60 + 30, NIGHT = 19 * 60, pref = 'auto';
+      try { var s = localStorage.getItem(KEY); if (s === 'day' || s === 'night' || s === 'auto') pref = s; } catch (e) {}
+      var t = pref === 'day' ? 'day' : pref === 'night' ? 'night'
+        : (function () { var d = new Date(), m = d.getHours() * 60 + d.getMinutes(); return m >= DAY && m < NIGHT ? 'day' : 'night'; })();
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* Night theme (default) — same palette + layout as the JYSON app */
+    :root, [data-theme='night'] {
+      color-scheme: dark;
+      --bg: #0f1113;
+      --cyan: #00ddfb;
+      --cyan-muted: rgba(0, 221, 251, 0.55);
+      --cyan-dim: rgba(0, 221, 251, 0.10);
+      --cyan-glow: rgba(0, 221, 251, 0.22);
+      --text: rgba(255, 255, 255, 0.95);
+      --text-2: rgba(255, 255, 255, 0.74);
+      --text-3: rgba(255, 255, 255, 0.56);
+      --text-4: rgba(255, 255, 255, 0.40);
+      --panel: rgba(255, 255, 255, 0.03);
+      --panel-border: rgba(255, 255, 255, 0.08);
+      --input-bg: rgba(255, 255, 255, 0.04);
+      --btn-fg: #0f1113;
+      --glow: rgba(0, 221, 251, 0.06);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    /* Day theme — white, dark text. Same layout, colors swap (matches JYSON). */
+    [data-theme='day'] {
+      color-scheme: light;
+      --bg: #e3e8ec;
+      --cyan: #008fa8;
+      --cyan-muted: rgba(0, 143, 168, 0.6);
+      --cyan-dim: rgba(0, 143, 168, 0.10);
+      --cyan-glow: rgba(0, 143, 168, 0.28);
+      --text: rgba(12, 18, 28, 0.95);
+      --text-2: rgba(12, 18, 28, 0.74);
+      --text-3: rgba(12, 18, 28, 0.58);
+      --text-4: rgba(12, 18, 28, 0.45);
+      --panel: rgba(255, 255, 255, 0.7);
+      --panel-border: rgba(12, 18, 28, 0.10);
+      --input-bg: rgba(255, 255, 255, 0.85);
+      --btn-fg: #ffffff;
+      --glow: rgba(0, 143, 168, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body {
+      background: var(--bg);
+      background-image: radial-gradient(ellipse 120% 50% at 50% 0%, var(--glow) 0%, transparent 60%);
+      color: var(--text);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100svh;
+      line-height: 1.6;
+      transition: background-color 0.35s ease, color 0.35s ease;
+    }
+    [data-theme='day'] #stars { display: none; } /* stars only at night */
+    /* soft drifting starfield */
+    #stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .star { position: absolute; border-radius: 50%; background: #fff; animation: twinkle var(--d) ease-in-out infinite; animation-delay: var(--dl); opacity: var(--b); }
+    @keyframes twinkle { 0%,100% { opacity: calc(var(--b) * 0.3); } 50% { opacity: var(--b); } }
+
+    .wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 24px; max-width: 720px; margin: 0 auto; }
+    .brand-group { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+    .brand { font-size: 14px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; }
+    .brand-sub { font-size: 10px; font-weight: 300; color: var(--text-4); letter-spacing: 0.04em; }
+    /* Top nav links — credibility, Anthropic-announcement style */
+    .nav-links { display: flex; align-items: center; gap: 22px; flex-shrink: 0; }
+    .nav-links a { font-family: var(--font); font-size: 13px; font-weight: 400; color: var(--text-3); text-decoration: none; white-space: nowrap; transition: color 0.18s ease; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-try { color: var(--cyan) !important; font-weight: 500 !important; border: 1px solid var(--cyan-glow); border-radius: 8px; padding: 7px 14px; transition: background 0.18s ease, border-color 0.18s ease; }
+    .nav-try:hover { background: var(--cyan-dim); border-color: var(--cyan); }
+    @media (max-width: 640px) {
+      .brand-sub { display: none; }
+      .nav-links { gap: 0; }
+      .nav-links a:not(.nav-try) { display: none; }
+    }
+
+    /* Hero */
+    .hero { padding: 64px 0 40px; text-align: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--cyan-muted); margin-bottom: 22px;
+    }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+    h1 { font-size: clamp(34px, 7vw, 60px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 20px; }
+    h1 .accent { color: var(--cyan); }
+    .lead { font-size: clamp(15px, 2.2vw, 18px); font-weight: 300; color: var(--text-2); max-width: 540px; margin: 0 auto 18px; }
+
+    .devnote {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--text-3);
+      border: 1px solid var(--panel-border); border-radius: 99px; padding: 6px 14px; margin-bottom: 30px;
+    }
+
+    .actions { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .btn-try {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font); font-size: 15px; font-weight: 600; letter-spacing: 0.01em;
+      color: var(--btn-fg); background: var(--cyan); border: none; border-radius: 12px;
+      padding: 14px 28px; text-decoration: none; cursor: pointer;
+      box-shadow: 0 0 24px rgba(0,221,251,0.28); transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .btn-try:hover { transform: translateY(-1px); box-shadow: 0 0 34px rgba(0,221,251,0.45); }
+    .try-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--text-4); text-transform: uppercase; }
+
+    /* ── System link card — clean, editorial, restrained ─────────────── */
+    .system-card {
+      display: block; width: 100%; max-width: 460px; margin: 4px auto 0;
+      text-decoration: none; color: var(--text); text-align: left;
+      background: var(--panel); border: 1px solid var(--panel-border); border-radius: 16px;
+      padding: 22px 24px; position: relative; overflow: hidden;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .system-card::before { /* subtle top hairline accent */
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan-glow), transparent);
+    }
+    .system-card:hover { border-color: var(--cyan-glow); transform: translateY(-2px); box-shadow: 0 14px 44px rgba(0,221,251,0.10); }
+    .system-card:hover .sc-arrow { transform: translateX(4px); }
+    .sc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .sc-live { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan-muted); }
+    .sc-arrow { font-size: 18px; color: var(--cyan); transition: transform 0.25s ease; }
+    .sc-title { font-size: 21px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .sc-sub { font-size: 13px; font-weight: 300; color: var(--text-3); line-height: 1.5; }
+
+    /* Waitlist card */
+    .waitlist {
+      margin: 44px auto 0; max-width: 480px;
+      background: var(--panel); border: 1px solid var(--panel-border); border-radius: 18px;
+      padding: 28px 26px; backdrop-filter: blur(12px);
+    }
+    .wl-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+    .wl-sub { font-size: 13px; font-weight: 300; color: var(--text-3); margin-bottom: 20px; }
+    .wl-form { display: flex; gap: 10px; flex-wrap: wrap; }
+    .wl-input {
+      flex: 1; min-width: 0; background: var(--input-bg); border: 1px solid var(--panel-border);
+      border-radius: 11px; padding: 13px 16px; color: var(--text); font-family: var(--font); font-size: 16px; outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .wl-input::placeholder { color: var(--text-4); }
+    .wl-input:focus { border-color: var(--cyan-glow); box-shadow: 0 0 0 3px rgba(0,221,251,0.08); }
+    .wl-btn {
+      background: var(--cyan-dim); border: 1px solid var(--cyan-glow); color: var(--cyan);
+      border-radius: 11px; padding: 13px 20px; font-family: var(--font); font-size: 14px; font-weight: 600;
+      cursor: pointer; white-space: nowrap; transition: background 0.18s ease;
+    }
+    .wl-btn:hover { background: rgba(0,221,251,0.18); }
+    .wl-btn:disabled { opacity: 0.6; cursor: default; }
+    .wl-success { font-size: 14px; color: var(--cyan); text-align: center; padding: 6px 0; }
+    .wl-error { font-size: 12px; color: #ff8c8c; margin-top: 10px; display: none; }
+    .wl-note { font-family: var(--mono); font-size: 10px; color: var(--text-4); margin-top: 14px; text-align: center; letter-spacing: 0.03em; }
+
+    /* Model section */
+    .model { margin: 64px auto 0; max-width: 560px; text-align: center; }
+    .model-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cyan-muted); margin-bottom: 14px; }
+    .model h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 300; letter-spacing: -0.015em; margin-bottom: 12px; }
+    .model h2 .v { color: var(--cyan); }
+    .model p { font-size: 15px; font-weight: 300; color: var(--text-2); }
+    .pillars { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 28px; text-align: left; }
+    .pillar { background: var(--panel); border: 1px solid var(--panel-border); border-radius: 14px; padding: 18px 18px; }
+    .pillar h3 { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
+    .pillar p { font-size: 13px; color: var(--text-3); }
+
+    /* Footer */
+    footer { margin-top: 72px; border-top: 1px solid var(--panel-border); padding: 26px 0 40px; }
+    .foot-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .sys-status { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-4); }
+    .foot-link { font-size: 11px; color: var(--text-4); text-decoration: none; }
+    .foot-link:hover { color: var(--cyan-muted); }
+
+    @media (min-width: 640px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
+
+    /* ── Section heading helper ───────────────────────────────────────── */
+    .sec { margin: 72px auto 0; max-width: 560px; }
+    .sec-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cyan-muted); text-align: center; margin-bottom: 12px; }
+    .sec-title { font-size: clamp(20px, 3.6vw, 28px); font-weight: 300; letter-spacing: -0.015em; text-align: center; margin-bottom: 8px; }
+    .sec-lead { font-size: 14px; font-weight: 300; color: var(--text-3); text-align: center; max-width: 460px; margin: 0 auto; }
+
+    /* ── Product preview — JYSON chat mock ────────────────────────────── */
+    .chatwin { margin-top: 26px; background: var(--panel); border: 1px solid var(--panel-border); border-radius: 18px; overflow: hidden; backdrop-filter: blur(12px); box-shadow: 0 16px 50px rgba(0,0,0,0.25); }
+    .cw-bar { display: flex; align-items: center; gap: 8px; padding: 11px 16px; border-bottom: 1px solid var(--panel-border); }
+    .cw-bar .cw-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-4); }
+    .cw-model { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; color: var(--cyan-muted); text-transform: lowercase; }
+    .cw-msgs { padding: 18px; display: flex; flex-direction: column; gap: 16px; }
+    .cw-row { display: flex; flex-direction: column; gap: 5px; }
+    .cw-row.user { align-items: flex-end; }
+    .cw-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; }
+    .cw-tag.you { color: var(--text-4); } .cw-tag.zin { color: var(--cyan-muted); }
+    .cw-text { font-size: 13px; line-height: 1.65; color: var(--text-2); max-width: 92%; }
+    .cw-text.u { color: var(--text-3); text-align: right; }
+    .cw-code { margin-top: 8px; font-family: var(--mono); font-size: 11px; line-height: 1.6; background: rgba(0,0,0,0.30); border: 1px solid var(--panel-border); border-radius: 8px; padding: 10px 12px; color: var(--text-2); overflow-x: auto; white-space: pre; }
+    [data-theme='day'] .cw-code { background: rgba(12,18,28,0.05); }
+    .cw-input { display: flex; align-items: center; gap: 10px; margin: 4px 18px 18px; padding: 11px 14px; border: 1px solid var(--panel-border); border-radius: 12px; background: var(--input-bg); }
+    .cw-input .pr { font-family: var(--mono); font-size: 13px; color: var(--cyan-muted); }
+    .cw-input .ph { flex: 1; font-size: 13px; color: var(--text-4); }
+    .cw-input .snd { width: 26px; height: 26px; border-radius: 7px; background: var(--cyan); color: var(--btn-fg); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+
+    /* ── Use cases ────────────────────────────────────────────────────── */
+    .uc-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 26px; }
+    .uc { background: var(--panel); border: 1px solid var(--panel-border); border-radius: 14px; padding: 18px; }
+    .uc h3 { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
+    .uc p { font-size: 13px; font-weight: 300; color: var(--text-3); }
+    @media (min-width: 640px) { .uc-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Safety ───────────────────────────────────────────────────────── */
+    .safety { margin: 72px auto 0; max-width: 560px; background: var(--panel); border: 1px solid var(--panel-border); border-radius: 18px; padding: 28px 26px; }
+    .safety .sec-eyebrow, .safety .sec-title { text-align: left; }
+    .safety .sec-title { margin-bottom: 16px; }
+    .safety ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .safety li { position: relative; padding-left: 22px; font-size: 13.5px; font-weight: 300; line-height: 1.55; color: var(--text-2); }
+    .safety li::before { content: ''; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); opacity: 0.8; }
+    .safety .s-k { color: var(--text); font-weight: 500; }
+
+    /* ── Rich footer ──────────────────────────────────────────────────── */
+    .foot-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 16px; margin-bottom: 30px; }
+    @media (min-width: 560px) { .foot-cols { grid-template-columns: repeat(4, 1fr); } }
+    .fc-title { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-4); margin-bottom: 12px; }
+    .fc-link { display: block; font-size: 13px; color: var(--text-3); text-decoration: none; margin-bottom: 9px; transition: color 0.18s ease; }
+    .fc-link:hover { color: var(--cyan-muted); }
+    .share { display: flex; gap: 10px; margin-top: 4px; }
+    .share a { width: 32px; height: 32px; border: 1px solid var(--panel-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-3); text-decoration: none; font-size: 12px; transition: all 0.18s ease; }
+    .share a:hover { color: var(--cyan); border-color: var(--cyan-glow); }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+
+  <nav>
+    <span class="brand-group">
+      <span class="brand">JYSON</span>
+      <span class="brand-sub">built by JDAI</span>
+    </span>
+    <div class="nav-links">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#model">Model</a>
+      <a href="#safety">Safety</a>
+      <a class="nav-try" href="https://jyson.vercel.app" target="_blank" rel="noopener">Try JYSON ↗</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Meet <span class="accent">JYSON</span>.</h1>
+      <p class="lead">
+        A frontier AI assistant — strong at reasoning, writing, code, and vision.
+        Ask it anything, hand it real work, and it follows through. Powered by the <strong>Zin&nbsp;v1</strong> model.
+      </p>
+      <div class="devnote"><span class="dot"></span> In active development · try it now</div>
+
+      <!-- Waitlist -->
+      <div class="waitlist">
+        <div class="wl-title">Join the official release waitlist</div>
+        <div class="wl-sub">Be first in when JYSON launches. No spam — one note at release.</div>
+        <form class="wl-form" id="wl-form" onsubmit="return submitWaitlist(event)">
+          <input class="wl-input" id="wl-email" type="email" required placeholder="Email address" autocomplete="email" />
+          <button class="wl-btn" id="wl-btn" type="submit">Notify me</button>
+        </form>
+        <div class="wl-error" id="wl-error">Something went wrong — try again.</div>
+        <div class="wl-note">JYSON is in development. Joining adds you to the release list only.</div>
+      </div>
+    </section>
+
+    <!-- Product preview -->
+    <section class="sec" aria-label="JYSON preview">
+      <div class="sec-eyebrow">See it work</div>
+      <h2 class="sec-title">JYSON, in the room with you.</h2>
+      <p class="sec-lead">Not a chatbot that answers and stops — Zin reads what you're building and moves it forward.</p>
+      <div class="chatwin">
+        <div class="cw-bar">
+          <span class="dot"></span>
+          <span class="cw-label">JYSON</span>
+          <span class="cw-model"><span class="dot"></span> zin v1 · balanced</span>
+        </div>
+        <div class="cw-msgs">
+          <div class="cw-row user">
+            <span class="cw-tag you">You</span>
+            <span class="cw-text u">Turn my coaching expertise into a digital product I can sell.</span>
+          </div>
+          <div class="cw-row">
+            <span class="cw-tag zin">JYSON · Zin v1</span>
+            <span class="cw-text">Let's build it. Here's a tiered offer drawn straight from what you already know:</span>
+            <div class="cw-code">OFFER LADDER
+ → Free   · 5-day email course  (lead magnet)
+ → $49    · self-paced workbook + templates
+ → $499   · 8-week cohort program (live)
+NEXT → pick the tier to build first.</div>
+          </div>
+        </div>
+        <div class="cw-input">
+          <span class="pr">&gt;</span>
+          <span class="ph">Ask, build, or type / for commands…</span>
+          <span class="snd">↑</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="capabilities" class="sec" aria-label="Capabilities">
+      <div class="sec-eyebrow">Capabilities</div>
+      <h2 class="sec-title">What JYSON does.</h2>
+      <div class="uc-grid">
+        <div class="uc"><h3>Conversation &amp; reasoning</h3><p>Ask anything. JYSON explains, analyzes, and works through hard problems in clear language.</p></div>
+        <div class="uc"><h3>Code</h3><p>Writes, reviews, and debugs across languages and stacks. Connect a local folder and it works inside your project.</p></div>
+        <div class="uc"><h3>Vision</h3><p>Reads images, screenshots, and documents — pull data from a chart, rebuild a UI, debug from a screenshot.</p></div>
+        <div class="uc"><h3>Files &amp; context</h3><p>Bring in text, code, and data. JYSON holds context across the whole conversation, not just one message.</p></div>
+      </div>
+    </section>
+
+    <!-- The model -->
+    <section id="model" class="model">
+      <div class="model-eyebrow">The Model</div>
+      <h2><span class="v">Zin v1</span></h2>
+      <p style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-muted); margin-bottom: 12px;">Buckler &amp; cold — a shield, and calm under pressure</p>
+      <p>A protected, steady core: frontier-class intelligence with restraint — clear, composed, and safe by design. Tuned for reasoning, code, and follow-through.</p>
+      <div class="pillars">
+        <div class="pillar"><h3>Multimodal</h3><p>Text, vision (images), and file &amp; code input — in one model.</p></div>
+        <div class="pillar"><h3>Tunable</h3><p>Four response profiles: Balanced, Precise, Creative, Builder.</p></div>
+        <div class="pillar"><h3>Agentic</h3><p>Streams live, holds multi-turn context, runs commands, works from your files.</p></div>
+      </div>
+    </section>
+
+    <!-- Built responsibly -->
+    <section id="safety" class="safety" aria-label="Built responsibly">
+      <div class="sec-eyebrow">Built responsibly</div>
+      <h2 class="sec-title">Powerful — and safe by design.</h2>
+      <ul>
+        <li><span class="s-k">You stay in control.</span> Zin proposes and builds; you decide what ships.</li>
+        <li><span class="s-k">Private by default.</span> JYSON only uses what's in your conversation and any folder you connect — never accounts or systems you didn't grant.</li>
+        <li><span class="s-k">Honest about limits.</span> It tells you when it's unsure instead of guessing.</li>
+        <li><span class="s-k">Declines harm.</span> Helpful, not dangerous — public-ready from day one.</li>
+      </ul>
+    </section>
+
+    <!-- Enter the system -->
+    <section class="sec" style="text-align: center;" aria-label="Enter the System">
+      <a class="system-card" href="https://jyson.vercel.app" target="_blank" rel="noopener" aria-label="Enter the System">
+        <div class="sc-top">
+          <span class="sc-live"><span class="dot"></span> Live preview</span>
+          <span class="sc-arrow">→</span>
+        </div>
+        <div class="sc-title">Enter the System</div>
+        <div class="sc-sub">JYSON is the system. Build with the Zin&nbsp;v1 model now — while we finish the official release.</div>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="foot-cols">
+        <div>
+          <div class="fc-title">JYSON</div>
+          <a class="fc-link" href="https://jyson.vercel.app" target="_blank" rel="noopener">Try JYSON ↗</a>
+          <a class="fc-link" href="#wl-email">Join the waitlist</a>
+          <a class="fc-link" href="https://jyson.vercel.app" target="_blank" rel="noopener">The Zin v1 model ↗</a>
+        </div>
+        <div>
+          <div class="fc-title">System</div>
+          <a class="fc-link" href="https://app-iota-inky-62.vercel.app" target="_blank" rel="noopener">ACCESS ↗</a>
+          <a class="fc-link" href="https://jdwhite.world/">jdwhite.world</a>
+          <a class="fc-link" href="https://jdproductions.io" target="_blank" rel="noopener">JD Productions ↗</a>
+        </div>
+        <div>
+          <div class="fc-title">Company</div>
+          <a class="fc-link" href="https://jdwhite.world/">JDAI</a>
+          <a class="fc-link" href="https://jdwhite.world/work-with-me">Work with me</a>
+        </div>
+        <div>
+          <div class="fc-title">Share</div>
+          <div class="share">
+            <a href="https://twitter.com/intent/tweet?text=JYSON%20%E2%80%94%20the%20intelligence%20layer%20that%20builds%20with%20you.&url=https%3A%2F%2Fjdwhite.world%2Fsystem" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjdwhite.world%2Fsystem" target="_blank" rel="noopener" aria-label="Share on LinkedIn">in</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-row">
+        <span class="sys-status"><span class="dot"></span> The system is waiting.</span>
+        <span class="foot-link">© 2026 JDAI</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ── Waitlist endpoint ──────────────────────────────────────────────
+    // Paste your Formspree form URL here to capture signups (free: formspree.io).
+    // e.g. 'https://formspree.io/f/abcdwxyz'. Leave '' to use the mailto fallback.
+    var WAITLIST_ENDPOINT = 'https://formspree.io/f/maqzgqwz';
+    var FALLBACK_EMAIL = 'jdevinwhite2@gmail.com';
+
+    async function submitWaitlist(e) {
+      e.preventDefault();
+      var email = document.getElementById('wl-email').value.trim();
+      var btn = document.getElementById('wl-btn');
+      var form = document.getElementById('wl-form');
+      var err = document.getElementById('wl-error');
+      if (!email) return false;
+      err.style.display = 'none';
+      btn.disabled = true; btn.textContent = '…';
+
+      function success() {
+        form.parentNode.querySelector('.wl-form').outerHTML =
+          '<div class="wl-success">You’re on the list. We’ll reach out at launch.</div>';
+      }
+
+      try {
+        if (WAITLIST_ENDPOINT) {
+          var res = await fetch(WAITLIST_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ email: email, source: 'jdwhite.world/system', list: 'jyson-official-release' })
+          });
+          if (!res.ok) throw new Error('bad status');
+          success();
+        } else {
+          // No endpoint configured yet → open a pre-filled email so no signup is lost.
+          window.location.href = 'mailto:' + FALLBACK_EMAIL +
+            '?subject=JYSON%20Waitlist&body=' + encodeURIComponent('Add me to the JYSON release waitlist: ' + email);
+          success();
+        }
+      } catch (_) {
+        btn.disabled = false; btn.textContent = 'Notify me';
+        err.style.display = 'block';
+      }
+      return false;
+    }
+
+    // ── Soft starfield ─────────────────────────────────────────────────
+    (function () {
+      var c = document.getElementById('stars');
+      for (var i = 0; i < 50; i++) {
+        var s = document.createElement('div');
+        s.className = 'star';
+        var size = Math.random() * 1.6 + 0.5;
+        s.style.left = (Math.random() * 100) + '%';
+        s.style.top = (Math.random() * 100) + '%';
+        s.style.width = size + 'px';
+        s.style.height = size + 'px';
+        s.style.setProperty('--b', (Math.random() * 0.5 + 0.2).toFixed(2));
+        s.style.setProperty('--d', (Math.random() * 3 + 3).toFixed(1) + 's');
+        s.style.setProperty('--dl', (Math.random() * 4).toFixed(1) + 's');
+        c.appendChild(s);
+      }
+    })();
+  </script>
+</body>
+</html>

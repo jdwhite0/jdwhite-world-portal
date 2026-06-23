@@ -1,0 +1,36 @@
+# Ignore all large directories to keep Vercel CLI upload fast
+.git/
+COMPANIES/
+access-app/
+lildev-app/
+websites/
+jyson/
+vault/
+career-ops/
+JD Command Vault/
+node_modules/
+digital_assets/
+logs/
+media/
+jdai-content-engine/
+concept_art/
+archive/
+.agents/
+scripts/
+active/
+automations/
+blueprints/
+builder-app/
+docs/
+ecosystem/
+engines/
+founder-os/
+founder-runtime/
+jyson-runtime/
+master doctrine/
+schemas/
+scratch/
+seo/
+system-docs/
+vault app/
+Founder_Architect_Institutional_Archive/
