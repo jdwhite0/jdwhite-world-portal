@@ -1,8 +1,45 @@
-# jdwhite.world — The JD White Portal
+<!-- ───────────────────────────  HERO  ─────────────────────────── -->
+<p align="center">
+  <a href="https://jdwhite.world">
+    <img src="assets/images/bg_galaxy_v2.jpg" alt="jdwhite.world — the cinematic system portal" width="100%">
+  </a>
+</p>
 
-**Live:** [jdwhite.world](https://jdwhite.world) · **Builder:** JD White · **Ecosystem:** JD Productions · **Chain:** Base
+<p align="center">
+  <img src="assets/images/jdp-logo-white.png" alt="JD White / JD Productions" width="120">
+</p>
 
-The public, cinematic entry point into the JD White ecosystem — a discovery-driven system portal, not a marketing site. This repository is the source for the live [jdwhite.world](https://jdwhite.world) experience and the public project record for [talent.app](https://talent.app).
+<h1 align="center">jdwhite.world — The JD White Portal</h1>
+
+<p align="center">
+  <em>The cinematic entry point into the JD White ecosystem.<br>
+  A discovery-driven system portal — not a marketing site.</em>
+</p>
+
+<!-- ──────────────────────────  BADGES  ────────────────────────── -->
+<p align="center">
+  <a href="https://jdwhite.world"><img src="https://img.shields.io/badge/LIVE-jdwhite.world-FFC20E?style=for-the-badge&labelColor=0a0a0f" alt="Live site"></a>
+  <a href="https://basescan.org/address/0x1d442F1CfCe1C08193d529aC07Db72E02C30DfB3"><img src="https://img.shields.io/badge/Built_on-BASE-0052FF?style=for-the-badge&labelColor=0a0a0f" alt="Built on Base"></a>
+  <a href="https://talent.app"><img src="https://img.shields.io/badge/talent.app-Builder-7C3AED?style=for-the-badge&labelColor=0a0a0f" alt="talent.app builder"></a>
+  <img src="https://img.shields.io/badge/license-MIT-3b82f6?style=for-the-badge&labelColor=0a0a0f" alt="MIT License">
+</p>
+
+<!-- ─────────────────  SIGNATURE: DIAMOND PORTALS  ───────────────── -->
+<p align="center">
+  <img src="assets/images/gem_v1.png" width="74" alt="">
+  <img src="assets/images/gem_v2.png" width="74" alt="">
+  <img src="assets/images/gem_v3.png" width="74" alt="">
+  <img src="assets/images/gem_v4.png" width="74" alt="">
+  <img src="assets/images/gem_v5.png" width="74" alt="">
+</p>
+
+<p align="center"><sub>The diamond portals — the signature of the system. Each one is a routing node into a different part of the ecosystem.</sub></p>
+
+---
+
+> **Note on motion:** the cinematic galaxy, parallax depth, custom cursor, and the diamond portals' descent/drift animations are all *live* — experience them at **[jdwhite.world](https://jdwhite.world)**. GitHub READMEs are static, so this page shows the brand; the portal shows it breathing.
+
+This repository is the source for the live [jdwhite.world](https://jdwhite.world) experience and the public project record for [talent.app](https://talent.app).
 
 ---
 
